@@ -4,7 +4,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { KategoriPage } from '../pages/kategori/kategori';
+import { CaritokoPage } from '../pages/caritoko/caritoko';
+import { PembelianPage } from '../pages/pembelian/pembelian';
+import { PenjualanPage } from '../pages/penjualan/penjualan';
+import { DompetPage } from '../pages/dompet/dompet';
+import { PesanPage } from '../pages/pesan/pesan';
+import { SettingPage } from '../pages/setting/setting';
+import { TokoPage } from '../pages/toko/toko';
 
 @Component({
   templateUrl: 'app.html'
@@ -14,15 +21,21 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, icon: string ,component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Kategori', icon: "add" , component: KategoriPage },
+      { title: 'Cari Toko', icon: "", component: CaritokoPage },
+      { title: 'Pembelian', icon: "" , component: PembelianPage },
+      { title: 'Penjualan', icon: "" , component: PenjualanPage },
+      { title: 'Dompet', icon: "" , component: DompetPage },
+      { title: 'Pesan', icon: "" , component: PesanPage },
+      { title: 'Setting', icon: "" , component: SettingPage },
+      { title: 'Toko Saya', icon: "" , component: TokoPage },
     ];
 
   }
