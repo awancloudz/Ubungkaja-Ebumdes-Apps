@@ -28,7 +28,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Kategori', icon: "add" , component: KategoriPage },
+      { title: 'Kategori', icon: "ios-add" , component: KategoriPage },
       { title: 'Cari Toko', icon: "", component: CaritokoPage },
       { title: 'Pembelian', icon: "" , component: PembelianPage },
       { title: 'Penjualan', icon: "" , component: PenjualanPage },
