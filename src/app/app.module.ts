@@ -12,6 +12,7 @@ import { DompetPage } from '../pages/dompet/dompet';
 import { PesanPage } from '../pages/pesan/pesan';
 import { SettingPage } from '../pages/setting/setting';
 import { TokoPage } from '../pages/toko/toko';
+import { KeranjangPage } from '../pages/keranjang/keranjang';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,7 +28,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DompetPage,
     PesanPage,
     SettingPage,
-    TokoPage
+    TokoPage,
+    KeranjangPage,
   ],
   imports: [
     BrowserModule,
@@ -45,11 +47,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PesanPage,
     SettingPage,
     TokoPage,
+    KeranjangPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}

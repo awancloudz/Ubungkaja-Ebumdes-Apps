@@ -12,6 +12,7 @@ import { DompetPage } from '../pages/dompet/dompet';
 import { PesanPage } from '../pages/pesan/pesan';
 import { SettingPage } from '../pages/setting/setting';
 import { TokoPage } from '../pages/toko/toko';
+import { KeranjangPage } from '../pages/keranjang/keranjang';
 
 @Component({
   templateUrl: 'app.html'
