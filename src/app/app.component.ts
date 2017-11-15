@@ -29,14 +29,15 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Kategori', icon: "ios-add" , component: KategoriPage },
-      { title: 'Cari Toko', icon: "", component: CaritokoPage },
-      { title: 'Pembelian', icon: "" , component: PembelianPage },
-      { title: 'Penjualan', icon: "" , component: PenjualanPage },
-      { title: 'Dompet', icon: "" , component: DompetPage },
-      { title: 'Pesan', icon: "" , component: PesanPage },
-      { title: 'Setting', icon: "" , component: SettingPage },
-      { title: 'Toko Saya', icon: "" , component: TokoPage },
+      { title: 'Home', icon: "home", component: HomePage },
+      { title: 'Kategori', icon: "ios-star", component: KategoriPage },
+      { title: 'Cari Toko', icon: "search", component: CaritokoPage },
+      { title: 'Pembelian', icon: "cash", component: PembelianPage },
+      { title: 'Penjualan', icon: "cart", component: PenjualanPage },
+      { title: 'Dompet', icon: "briefcase", component: DompetPage },
+      { title: 'Pesan', icon: "archive", component: PesanPage },
+      { title: 'Setting', icon: "settings", component: SettingPage },
+      { title: 'Toko Saya', icon: "ios-pricetag", component: TokoPage },
     ];
 
   }
