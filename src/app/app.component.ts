@@ -22,22 +22,22 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, icon: string ,component: any}>;
+  pages: Array<{title: string, icon: any, color: any ,component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', icon: "home", component: HomePage },
-      { title: 'Kategori', icon: "ios-star", component: KategoriPage },
-      { title: 'Cari Toko', icon: "search", component: CaritokoPage },
-      { title: 'Pembelian', icon: "cash", component: PembelianPage },
-      { title: 'Penjualan', icon: "cart", component: PenjualanPage },
-      { title: 'Dompet', icon: "briefcase", component: DompetPage },
-      { title: 'Pesan', icon: "archive", component: PesanPage },
-      { title: 'Setting', icon: "settings", component: SettingPage },
-      { title: 'Toko Saya', icon: "ios-pricetag", component: TokoPage },
+      { title: 'Home', icon: "home", color:"icongreen", component: HomePage },
+      { title: 'Kategori', icon: "tags", color:"icongreen", component: KategoriPage },
+      { title: 'Cari Toko', icon: "search-plus", color:"icongreen", component: CaritokoPage },
+      { title: 'Pembelian', icon: "money", color:"icongreen", component: PembelianPage },
+      { title: 'Penjualan', icon: "line-chart", color:"icongreen", component: PenjualanPage },
+      { title: 'Dompet', icon: "credit-card", color:"icongreen", component: DompetPage },
+      { title: 'Pesan', icon: "envelope-o", color:"icongreen", component: PesanPage },
+      { title: 'Setting', icon: "gears", color:"icongreen", component: SettingPage },
+      { title: 'Toko Saya', icon: "building", color:"icongreen", component: TokoPage },
     ];
 
   }
