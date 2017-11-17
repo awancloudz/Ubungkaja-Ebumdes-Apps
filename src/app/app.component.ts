@@ -37,7 +37,6 @@ export class MyApp {
       { title: 'Dompet', icon: "credit-card", color:"icongreen", component: DompetPage },
       { title: 'Pesan', icon: "envelope-o", color:"icongreen", component: PesanPage },
       { title: 'Setting', icon: "gears", color:"icongreen", component: SettingPage },
-      { title: 'Toko Saya', icon: "building", color:"icongreen", component: TokoPage },
     ];
 
   }

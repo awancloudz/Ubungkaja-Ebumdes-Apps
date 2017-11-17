@@ -8,10 +8,16 @@
   <ion-content>
     <ion-list>
       <button menuClose ion-item icon-left *ngFor="let p of pages" (click)="openPage(p)">
-        <i class="fa fa-{{p.icon}} {{p.color}}" aria-hidden="true" style="padding-right:15px;font-size:20px"></i>
+        <i class="fa fa-{{p.icon}} {{p.position}} {{p.color}}" aria-hidden="true" style="padding-right:15px;font-size:20px"></i>
         {{p.title}}
       </button>
     </ion-list>
+
+    <ion-footer>
+         <button ion-item icon-left position="bottom">
+          <i class="fa fa-building icongreen" aria-hidden="true" style="padding-right:15px;font-size:20px;margin-left:5px"></i>
+          Toko saya</button>
+    </ion-footer>
   </ion-content>
 
 </ion-menu>
