@@ -23,7 +23,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content style="margin-top:20px">
+<ion-content style="margin-top:10px">
     <ion-slides class="slides" pager="true" autoplay="2500" loop="true" initialslide="6">
         <ion-slide>
             <ion-item>
@@ -63,73 +63,81 @@
     </ion-slides>
 
       <ion-card style="text-align:center">
-          <ion-card-header class="judulkategori" style="margin-top:10px">
-              Kategori
-          </ion-card-header>
+          
+        <ion-card-header class="judulkategori" style="margin-top:5px">
+            Kategori
+        </ion-card-header>
         
-          <ion-list style="margin-top:20px">
+        <ion-list style="margin-top:5px">
             
-            <ion-buttons>
-              <button ion-button class="tombolkategori" round>
-                <i class="fa fa-plus-square" aria-hidden="true" style="margin-right:10px" item-start></i>
-              Kategori 1
-              </button>
+            <ion-row>
+                
+                <ion-col>
+                  <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
+                     kategori 1
+                </button>
+                </ion-col>
+                                
+                <ion-col>
+                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
+                        kategori 2
+                    </button>
+                    </ion-col>
+                                
+                <ion-col>
+                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
+                    kategori 3
+                    </button>
+                </ion-col>
+                
+            </ion-row>
+                
+            <ion-row>
+                
+                <ion-col>
+                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
+                    kategori 4
+                    </button>
+                </ion-col>
+                
+                <ion-col>
+                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
+                    kategori 5
+                    </button>
+                </ion-col>
+                
+                <ion-col>
+                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
+                    kategori 6
+                    </button>
+                </ion-col>
+                
+            </ion-row>
+                
+            <ion-row>
+                
+                <ion-col>
+                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
+                    kategori 7
+                    </button>
+                </ion-col>
+                
+                <ion-col>
+                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
+                    kategori 8
+                    </button>
+                </ion-col>
+                
+                <ion-col>
+                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
+                    kategori 9
+                    </button>
+                </ion-col>
+                
+            </ion-row>
         
-              <button ion-button class="tombolkategori" round>
-                  <i class="fa fa-plus-square" aria-hidden="true" style="margin-right:10px" item-end></i>
-              Kategori 6
-              </button>
-            </ion-buttons>
-            
-            <ion-buttons>
-                <button ion-button class="tombolkategori" round>
-                    <i class="fa fa-plus-square" aria-hidden="true" style="margin-right:10px" item-start></i>
-                  Kategori 2
-                  </button>
-            
-                  <button ion-button class="tombolkategori" round>
-                      <i class="fa fa-plus-square" aria-hidden="true" style="margin-right:10px" item-end></i>
-                  Kategori 7
-                  </button>
-            </ion-buttons>
-        
-            <ion-buttons>
-                <button ion-button class="tombolkategori" round>
-                    <i class="fa fa-plus-square" aria-hidden="true" style="margin-right:10px" item-start></i>
-                  Kategori 3
-                  </button>
-            
-                  <button ion-button class="tombolkategori" round>
-                      <i class="fa fa-plus-square" aria-hidden="true" style="margin-right:10px" item-end></i>
-                  Kategori 8
-                  </button>
-            </ion-buttons>
+        </ion-list>
 
-            <ion-buttons>
-                <button ion-button class="tombolkategori" round>
-                    <i class="fa fa-plus-square" aria-hidden="true" style="margin-right:10px" item-start></i>
-                  Kategori 4
-                  </button>
-            
-                  <button ion-button class="tombolkategori" round>
-                      <i class="fa fa-plus-square" aria-hidden="true" style="margin-right:10px" item-end></i>
-                  Kategori 9
-                  </button>
-            </ion-buttons>
-
-            <ion-buttons>
-                <button ion-button class="tombolkategori" round>
-                    <i class="fa fa-plus-square" aria-hidden="true" style="margin-right:10px" item-start></i>
-                  Kategori 5
-                  </button>
-            
-                  <button ion-button class="tombolkategori" round>
-                      <i class="fa fa-plus-square" aria-hidden="true" style="margin-right:10px" item-end></i>
-                  Kategori 10
-                  </button>
-            </ion-buttons>
-        
-          </ion-list>
         </ion-card>
 
             <ion-buttons style="text-align:center">
@@ -138,4 +146,5 @@
                     Cari Toko
                 </button>
             </ion-buttons>
+
 </ion-content>
