@@ -6,7 +6,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
 
-    <ion-title>Home</ion-title>
+    <ion-title style="margin-left: -15px">Home</ion-title>
     
     <ion-buttons start>
         <button ion-button icon-only (click)="tombolsearch()">
@@ -21,130 +21,74 @@
     </ion-buttons>
     
   </ion-navbar>
+
 </ion-header>
 
-<ion-content style="margin-top:10px">
-    <ion-slides class="slides" pager="true" autoplay="2500" loop="true" initialslide="6">
-        <ion-slide>
-            <ion-item>
-                <ion-img src="pic1.jpg" class="slides"></ion-img>
-            </ion-item>
-        </ion-slide>
-        
-        <ion-slide>
-            <ion-item>
-                <ion-img src="pic2.jpg" class="slides"></ion-img>
-            </ion-item>
-        </ion-slide>
-        
-        <ion-slide>
-            <ion-item>
-                <ion-img src="pic3.jpg" class="slides"></ion-img>
-            </ion-item>
-        </ion-slide>
-        
-        <ion-slide>
-            <ion-item>
-                <ion-img src="pic4.jpg" class="slides"></ion-img>
-            </ion-item>
-        </ion-slide>
-        
-        <ion-slide>
-            <ion-item>
-                <ion-img src="pic5.png" class="slides"></ion-img>
-            </ion-item>
-        </ion-slide>
+<ion-content>
 
+    <ion-slides class="slide-container" pager="true" autoplay="2500" loop="true" initialslide="6">
         <ion-slide>
             <ion-item>
-                <ion-img src="pic6.jpg" class="slides"></ion-img>
+                <img src="pic1.jpg" class="slide-picture">
+            </ion-item>
+        </ion-slide>
+        
+        <ion-slide>
+            <ion-item>
+                <img src="pic2.jpg" class="slide-picture">
+            </ion-item>
+        </ion-slide>
+        
+        <ion-slide>
+            <ion-item>
+                <img src="pic3.jpg" class="slide-picture">
             </ion-item>
         </ion-slide>
     </ion-slides>
 
-      <ion-card style="text-align:center">
-          
-        <ion-card-header class="judulkategori" style="margin-top:5px">
-            Kategori
-        </ion-card-header>
+      
+<ion-card style="margin-top:10px">
+    <ion-title class="kategori-title">Kategori</ion-title>
         
-        <ion-list style="margin-top:5px">
+    <ion-list class="kategori-list">
             
-            <ion-row>
+        <ion-row>
                 
-                <ion-col>
-                  <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
-                     kategori 1
+            <ion-col>
+                <button style="background-image:url('Sembako.jpg')" class="kategori-avatar" (click)="tombolsembako()">
+                Sembako
                 </button>
-                </ion-col>
+                
+            </ion-col>
                                 
-                <ion-col>
-                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
-                        kategori 2
-                    </button>
-                    </ion-col>
-                                
-                <ion-col>
-                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
-                    kategori 3
-                    </button>
-                </ion-col>
+            <ion-col>
+                <button style="background-image:url('peralatan_rumah_tangga.jpg')" class="kategori-avatar" (click)="tombolperalatan()">
+                Peralatan Rumah Tangga
+                </button>
+            </ion-col>
                 
-            </ion-row>
+        </ion-row>
                 
-            <ion-row>
+        <ion-row>
                 
-                <ion-col>
-                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
-                    kategori 4
-                    </button>
-                </ion-col>
+            <ion-col>
+                <button style="background-image:url('Bahan_bangunan.jpg')" class="kategori-avatar" (click)="openPage(p)">
+                Bahan Bangunan
+                </button>
+            </ion-col>
                 
-                <ion-col>
-                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
-                    kategori 5
-                    </button>
-                </ion-col>
+            <ion-col>
+                <button style="background-image:url('Furniture.jpg')" class="kategori-avatar" (click)="openPage(p)">
+                Furniture
+                </button>
+            </ion-col>
                 
-                <ion-col>
-                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
-                    kategori 6
-                    </button>
-                </ion-col>
-                
-            </ion-row>
-                
-            <ion-row>
-                
-                <ion-col>
-                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
-                    kategori 7
-                    </button>
-                </ion-col>
-                
-                <ion-col>
-                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
-                    kategori 8
-                    </button>
-                </ion-col>
-                
-                <ion-col>
-                    <button style="background-image:url('beras.jpg')" class="kategori-avatar" (click)="openPage(p)">
-                    kategori 9
-                    </button>
-                </ion-col>
-                
-            </ion-row>
+        </ion-row>
         
-        </ion-list>
+    </ion-list>
 
-        </ion-card>
+</ion-card>
 
-            <ion-buttons style="text-align:center">
-                <button ion-button class="caritoko" round>
-                        <i class="fa fa-search" aria-hidden="true" style="margin-right:10px"></i>
-                    Cari Toko
-                </button>
-            </ion-buttons>
+        
 
 </ion-content>

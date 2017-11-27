@@ -1,40 +1,38 @@
 page-home {
 
 }
-.slides {
-    margin:auto;
-    width: 320px;
-    height: 200px;
-    text-align: center;
+.slide-container {
+    padding-top: 0px;
+    height: 220px !important;
+    width: auto !important;
 }
 
-.judulkategori {
-    padding: 2px;
-    margin-right: 100px;
-    margin-left: 100px;
-    border: 2px solid gray;
-    border-radius: 10px;
-    font-family: "arial";
-    font-size: 18px;
-    font-variant: small-caps;
-}
-
-.tombolkategori {
-    height:25px;
-    width:130px;
-}
-
-.caritoko {
-    height:25px;
-    width:110px;
+.slide-picture {
     
+    background-size:cover;
+}
+
+.kategori-title {
+    padding: 2px;
+    margin-right: 80px;
+    margin-left: 80px;
+    font-size: 18px;
+    margin-top:5px;
+    text-align: center;
 }
 
 .kategori-avatar {
     border-radius: 10px;
-    height: 80px;
-    width: 80px;
+    padding-right: 5px;
+    padding-left: 5px;
+    height: 110px;
+    width: 140px;
     background-size:cover;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     font-size: 15px;
+}
+
+.kategori-list {
+    text-align: center;
+    margin-top:5px;
 }

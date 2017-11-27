@@ -5,7 +5,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { KategoriPage } from '../pages/kategori/kategori';
-import { CaritokoPage } from '../pages/caritoko/caritoko';
+import { SembakoPage } from '../pages/sembako/sembako';
+import { PeralatanrumahtanggaPage } from '../pages/peralatanrumahtangga/peralatanrumahtangga';
 import { PembelianPage } from '../pages/pembelian/pembelian';
 import { PenjualanPage } from '../pages/penjualan/penjualan';
 import { DompetPage } from '../pages/dompet/dompet';
@@ -13,6 +14,7 @@ import { PesanPage } from '../pages/pesan/pesan';
 import { SettingPage } from '../pages/setting/setting';
 import { TokoPage } from '../pages/toko/toko';
 import { KeranjangPage } from '../pages/keranjang/keranjang';
+import { SearchPage } from '../pages/search/search';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     KategoriPage,
-    CaritokoPage,
+    SembakoPage,
+    PeralatanrumahtanggaPage,
     PembelianPage,
     PenjualanPage,
     DompetPage,
@@ -30,6 +33,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SettingPage,
     TokoPage,
     KeranjangPage,
+    SearchPage,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     KategoriPage,
-    CaritokoPage,
+    SembakoPage,
+    PeralatanrumahtanggaPage,
     PembelianPage,
     PenjualanPage,
     DompetPage,
@@ -48,6 +53,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SettingPage,
     TokoPage,
     KeranjangPage,
+    SearchPage,
   ],
   providers: [
     StatusBar,

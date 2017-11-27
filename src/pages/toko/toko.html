@@ -12,7 +12,7 @@
           <ion-icon name="menu"></ion-icon>
       </button>
       
-    <ion-title>toko</ion-title>
+    <ion-title>Toko saya</ion-title>
     
   </ion-navbar>
 
@@ -20,5 +20,32 @@
 
 
 <ion-content padding>
+
+<div>
+  <ion-segment [(ngModel)]="toko_saya" class="namasegment">
+    <ion-segment-button value="penjualan">
+      Penjualan
+    </ion-segment-button>
+    <ion-segment-button value="pemesanan">
+      Pemesanan
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<div [ngSwitch]="toko_saya">
+  <ion-list *ngSwitchCase="'penjualan'">
+    <ion-item>
+      
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'pemesanan'">
+    <ion-item>
+      
+    </ion-item>
+
+  </ion-list>
+</div>
 
 </ion-content>
