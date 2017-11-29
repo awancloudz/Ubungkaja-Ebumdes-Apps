@@ -12,20 +12,16 @@
           <ion-icon name="menu"></ion-icon>
       </button>
 
-    <ion-title style="margin-left: -15px">Pembelian</ion-title>
+    <ion-title style="margin-left: -15px">Sembako</ion-title>
     
   </ion-navbar>
 
-  <ion-toolbar class="toolbar-style">
+  <ion-toolbar class="toolbar-style" color="primary">
     <ion-buttons class="sub-placeholder" start>
       <ion-item>
         <ion-label stacked class="margin-placeholder" style="font-size:15px">
-        <ion-select [(ngModel)]="sembako">
-          <ion-option value="beras">Beras</ion-option>
-          <ion-option value="minyak_goreng">Minyak Goreng</ion-option>
-          <ion-option value="telur">Telur</ion-option>
-          <ion-option value="gula">Gula</ion-option>
-          <ion-option value="rempah">Rempah-rempah</ion-option>
+        <ion-select [(ngModel)]="id_subkategori">
+          <ion-option ion-item *ngFor="let item of items.koleksi" value="{{ item.id }}">{{ item.namasubkategori }}</ion-option>
         </ion-select>
         </ion-label>
       </ion-item>

@@ -32,25 +32,10 @@
 <ion-content style="margin-left: 9px">
 
     <ion-list>
-        <button ion-item (click)="tombolsembako()">
-          <ion-icon name="md-grid" class="iconkategori" ></ion-icon>
-          Sembako
-        </button>
-
-        <button ion-item (click)="tombolperalatan()">
-          <ion-icon name="md-grid" class="iconkategori" ></ion-icon>
-          Peralatan Rumah Tangga
-        </button>
-
-        <button ion-item>
+        <button ion-item *ngFor="let item of items" (click)="tomboldetail(item)">
           <ion-icon name="md-grid" class="iconkategori"></ion-icon>
-          Bahan Bangunan
-        </button> 
-
-        <button ion-item>
-          <ion-icon name="md-grid" class="iconkategori"></ion-icon>
-          Furniture
-        </button> 
+          {{item.namakategori}}
+        </button>
 
     </ion-list>
 

@@ -4,9 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { KategoriPage } from '../pages/kategori/kategori';
-import { SembakoPage } from '../pages/sembako/sembako';
-import { PeralatanrumahtanggaPage } from '../pages/peralatanrumahtangga/peralatanrumahtangga';
+import { KategoriPage,KategoriDetailPage } from '../pages/kategori/kategori';
 import { PembelianPage } from '../pages/pembelian/pembelian';
 import { PenjualanPage } from '../pages/penjualan/penjualan';
 import { DompetPage } from '../pages/dompet/dompet';
