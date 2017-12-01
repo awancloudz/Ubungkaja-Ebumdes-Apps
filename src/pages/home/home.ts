@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, Platform, ActionSheetController, LoadingController ,ToastController,AlertController } from 'ionic-angular';
 import { KeranjangPage } from '../../pages/keranjang/keranjang';
 import { SearchPage } from '../../pages/search/search';
+import { KategoriDetailPage } from '../../pages/kategori/kategori';
 
 @Component({
   selector: 'home-page',
   templateUrl: 'home.html',
-  entryComponents: [ KeranjangPage,SearchPage ],
+  entryComponents: [ KeranjangPage,SearchPage,KategoriDetailPage ],
 })
 export class HomePage {
 
@@ -21,6 +22,10 @@ export class HomePage {
 
   tombolsearch() {
     this.nav.push (SearchPage);
+  }
+
+  tombolsembako() {
+    this.nav.push (KategoriDetailPage);
   }
 
 }

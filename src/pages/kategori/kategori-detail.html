@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
 
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
@@ -17,10 +17,11 @@
   </ion-navbar>
 
   <ion-toolbar class="toolbar-style" color="primary">
+
     <ion-buttons class="sub-placeholder" start>
-      <ion-item>
-        <ion-label stacked class="margin-placeholder" style="font-size:15px">
-        <ion-select [(ngModel)]="id_subkategori">
+      <ion-item class="margin-placeholder">
+        <ion-label  style="font-size:15px" stacked>
+        <ion-select [(ngModel)]="id_subkategori" placeholder="Sub-Kategori">
           <ion-option ion-item *ngFor="let item of items.koleksi" value="{{ item.id }}">{{ item.namasubkategori }}</ion-option>
         </ion-select>
         </ion-label>
@@ -28,9 +29,9 @@
     </ion-buttons>
   
     <ion-buttons class="filter-placeholder" end>
-        <ion-item>
-          <ion-label stacked class="margin-placeholder" style="font-size:15px" placeholder="Urutkan">
-          <ion-select [(ngModel)]="filter">
+        <ion-item class="margin-placeholder">
+          <ion-label style="font-size:15px" stacked>
+          <ion-select [(ngModel)]="filter" placeholder="Filter">
             <ion-option value="terbaru">Terbaru</ion-option>
             <ion-option value="termahal">Termahal</ion-option>
             <ion-option value="termurah">Termurah</ion-option>
