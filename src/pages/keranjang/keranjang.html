@@ -21,8 +21,48 @@
 
 <ion-content>
 
-  <ion-card class="thumbnail-container">
+  <ion-card class="card-container">
+      <ion-row no-padding>
+        
+            <ion-col class="xxxx">             
+                    <img src="thumbnail-barang/dark.jpg" class="picture-item">
 
+                    <select class="dropdown-quantity">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+
+            </ion-col>
+
+            <ion-col class="yyyy">
+                  <h2>Nama Produk Yang Dijual</h2>
+                  
+                  <h2 class="harga-barang"><b>Rp 1.000.000,-</b></h2>
+            </ion-col>
+
+            <ion-col class="zzzz">
+                <ion-buttons class="delete-button">
+                  <button ion-button clear icon-only>
+                    <i class="fa fa-trash-o" aria-hidden="true" style="zoom:1.5"></i>
+                  </button>
+                </ion-buttons>
+            </ion-col>
+
+      </ion-row>
   </ion-card>
+
+  <ion-footer>
+    <ion-buttons>
+      <button ion-button block>Kirim</button>
+    </ion-buttons>
+  </ion-footer>
 
 </ion-content>

@@ -2,26 +2,48 @@ page-keranjang {
 
 }
 
-.thumbnail-container {
-    height: 120px;
-    width: 300px;
+.card-container {
+    height: 130px;
+    width: 95% !important;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px !important;
+    position: relative;
+    padding: 0px;
 }
 
-.thumbnail-picture-container {
-    margin: 2px;
-    width: 140px;
+.xxxx {
+    max-width: 90px;
 }
-.thumbnail-picture {
-    height: 100px;
-    width: 100px;
+
+.picture-item {
     border-radius: 10px;
+    width: 80px;
+    height: 95px;
 }
 
-.nama-produk {
+.dropdown-quantity {
+    margin-top: 3px;
+    width: 80px;
+    text-align: center;
 
 }
 
-.delete {
-    margin-right: -10px;
-    margin-top: 5px;
+.yyyy {
+    width: auto !important;
+    height: 130px;
+    text-align: left;
+}
+
+.harga-barang {
+    padding-top: 30px;
+}
+
+.zzzz {
+    max-width: 35px !important;
+}
+
+.delete-button {
+    padding-top: 40px;
+    padding-left: 1px;
 }
