@@ -36,3 +36,18 @@ page-home {
     text-align: center;
     margin-top:5px;
 }
+
+ion-card {
+    position: relative;
+    text-align: center;
+}
+
+.card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 15px;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px rgb(66, 66, 66);
+}

@@ -13,13 +13,14 @@ import { DompetPage } from '../pages/dompet/dompet';
 import { PesanPage } from '../pages/pesan/pesan';
 import { SettingPage } from '../pages/setting/setting';
 import { TokoPage } from '../pages/toko/toko';
-import { KeranjangPage } from '../pages/keranjang/keranjang';
+import { KeranjangPage,KeranjangcreatePage } from '../pages/keranjang/keranjang';
 import { SearchPage } from '../pages/search/search';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { KategoriserviceProvider } from '../providers/kategoriservice/kategoriservice';
 import { KategoriPageModule } from '../pages/kategori/kategori.module';
+import { KeranjangserviceProvider } from '../providers/keranjangservice/keranjangservice';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { KategoriPageModule } from '../pages/kategori/kategori.module';
     SettingPage,
     TokoPage,
     KeranjangPage,
+    KeranjangcreatePage,
     SearchPage,
   ],
   imports: [
@@ -55,6 +57,7 @@ import { KategoriPageModule } from '../pages/kategori/kategori.module';
     SettingPage,
     TokoPage,
     KeranjangPage,
+    KeranjangcreatePage,
     SearchPage,
   ],
   providers: [
@@ -62,6 +65,7 @@ import { KategoriPageModule } from '../pages/kategori/kategori.module';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     KategoriserviceProvider,
+    KeranjangserviceProvider,
   ]
 })
 export class AppModule {}

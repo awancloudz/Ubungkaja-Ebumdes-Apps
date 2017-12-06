@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 //Tambahkan Provider
 import { KategoriserviceProvider } from '../../providers/kategoriservice/kategoriservice';
+import { KeranjangserviceProvider } from '../../providers/keranjangservice/keranjangservice';
 //Tambahkan Variabel Global
 import { KategoriArray } from '../../pages/kategori/kategoriarray';
 import { NavController, NavParams, Platform, ActionSheetController, LoadingController ,ToastController,AlertController } from 'ionic-angular';
 import { SearchPage } from '../../pages/search/search';
-import { KeranjangPage } from '../../pages/keranjang/keranjang';
+import { KeranjangPage,KeranjangcreatePage } from '../../pages/keranjang/keranjang';
+import { KeranjangArray } from '../keranjang/keranjangarray';
 /**
  * Generated class for the KategoriPage page.
  *
@@ -58,22 +60,24 @@ ionViewDidLoad() {
   tombolkeranjang () {
     this.nav.push (KeranjangPage);
   }
+
 }
 
 @Component({
   selector: 'page-kategori',
   templateUrl: 'kategori-detail.html',
-  entryComponents: [ SearchPage,KeranjangPage ],
+  entryComponents: [ SearchPage,KeranjangPage,KeranjangcreatePage ],
 })
 export class KategoriDetailPage {
   item;
   id:Number;
+  id2:Number;
   namasubkategori:String;
   foto:String;
   items:KategoriArray[]=[];
- 
+  
   constructor(params: NavParams, public nav: NavController,public platform: Platform,public actionSheetCtrl: ActionSheetController,public alertCtrl: AlertController,
-    public loadincontroller:LoadingController,public _toast:ToastController,public kategoriservice:KategoriserviceProvider) {
+    public loadincontroller:LoadingController,public _toast:ToastController,public kategoriservice:KategoriserviceProvider,public keranjangservice:KeranjangserviceProvider) {
       this.item = params.data.item;
   }
 
@@ -100,11 +104,15 @@ ionViewDidLoad() {
   );
 }
 
-  tombolsearch () {
-    this.nav.push (SearchPage);
+  tombolsearch() {
+    this.nav.push(SearchPage);
   }
 
-  tombolkeranjang () {
-    this.nav.push (KeranjangPage);
+  tombolkeranjang() {
+    this.nav.push(KeranjangPage);
+  }
+
+  tombolbeli(item2) {
+    this.nav.push(KeranjangcreatePage, {item2: item2});
   }
 }

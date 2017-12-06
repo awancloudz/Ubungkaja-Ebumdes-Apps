@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { KeranjangPage } from './keranjang';
+import { KeranjangPage,KeranjangcreatePage } from './keranjang';
 
 @NgModule({
   declarations: [
-    KeranjangPage,
+    KeranjangPage,KeranjangcreatePage
   ],
   imports: [
     IonicPageModule.forChild(KeranjangPage),

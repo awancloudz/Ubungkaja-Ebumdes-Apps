@@ -13,7 +13,11 @@
       </button>
 
     <ion-title style="margin-left: -15px">Keranjang</ion-title>
-    
+    <ion-buttons start>
+        <button ion-button icon-only (click)="tombolsearch()">
+            <ion-icon name="search" style="zoom:1.3"></ion-icon>
+        </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -21,13 +25,14 @@
 
 <ion-content>
 
-  <ion-card class="card-container">
+  <ion-card class="card-container" *ngFor="let item of items">
       <ion-row no-padding>
-        
-            <ion-col class="xxxx">             
-                    <img src="thumbnail-barang/dark.jpg" class="picture-item">
 
-                    <select class="dropdown-quantity">
+            <ion-col class="xxxx">             
+                    <img src="http://forkomperbekelbali.com/desa/public/fotoupload/{{item.produktoko.foto}}" class="picture-item">
+
+                    <select class="dropdown-quantity" [(ngModel)]="jumlah" (change)="tomboledit(item)">
+                      <option value="{{item.jumlah}}" selected="selected">{{item.jumlah}}</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -39,18 +44,16 @@
                       <option value="9">9</option>
                       <option value="10">10</option>
                     </select>
-
             </ion-col>
 
             <ion-col class="yyyy">
-                  <h2>Nama Produk Yang Dijual</h2>
-                  
-                  <h2 class="harga-barang"><b>Rp 1.000.000,-</b></h2>
+                  <h2>{{ item.produktoko.namaproduk }}</h2>
+                  <h2 class="harga-barang"><b>Rp {{item.produktoko.harga}},-</b></h2>
             </ion-col>
 
             <ion-col class="zzzz">
                 <ion-buttons class="delete-button">
-                  <button ion-button clear icon-only>
+                  <button ion-button clear icon-only (click)="tombolhapus(item)">
                     <i class="fa fa-trash-o" aria-hidden="true" style="zoom:1.5"></i>
                   </button>
                 </ion-buttons>
@@ -59,10 +62,9 @@
       </ion-row>
   </ion-card>
 
-  <ion-footer>
-    <ion-buttons>
-      <button ion-button block>Kirim</button>
-    </ion-buttons>
-  </ion-footer>
-
 </ion-content>
+<ion-footer>
+  <ion-buttons>
+    <button ion-button block>Kirim</button>
+  </ion-buttons>
+</ion-footer>

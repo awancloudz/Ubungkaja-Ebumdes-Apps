@@ -1,7 +1,4 @@
 page-kategori {
-
-}
-
 .iconkategori {
     padding-right: 14px;
     font-size: 20px;
@@ -27,3 +24,29 @@ page-kategori {
     margin-top: -25px;
     text-align: center;
 }
+.kategori-title {
+    padding: 2px;
+    margin-right: 80px;
+    margin-left: 80px;
+    font-size: 18px;
+    margin-top:5px;
+    text-align: center;
+}
+
+.kategori-avatar {
+    border-radius: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+    height: 110px;
+    width: 130px;
+    background-size:cover;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.kategori-list {
+    text-align: center;
+    margin-top:5px;
+}
+}
+

@@ -12,8 +12,18 @@
           <ion-icon name="menu"></ion-icon>
       </button>
 
-    <ion-title style="margin-left: -15px">Sembako</ion-title>
-    
+    <ion-title style="margin-left: -15px">Kategori</ion-title>
+    <ion-buttons start>
+        <button ion-button icon-only (click)="tombolsearch()">
+            <ion-icon name="search" style="zoom:1.3"></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+        <button ion-button icon-only (click)="tombolkeranjang()">
+          <ion-icon name="cart" style="zoom:1.2" ></ion-icon>
+        </button>
+    </ion-buttons>
   </ion-navbar>
 
   <ion-toolbar class="toolbar-style" color="primary">
@@ -22,7 +32,7 @@
       <ion-item class="margin-placeholder">
         <ion-label  style="font-size:15px;text-align:center" stacked>
         <ion-select [(ngModel)]="id_subkategori" placeholder="Sub-Kategori">
-          <ion-option ion-item *ngFor="let item of items.koleksi" value="{{ item.id }}">{{ item.namasubkategori }}</ion-option>
+          <ion-option ion-item *ngFor="let item of items.koleksi" value="{{ item.id }}" (click)="tombolsub(item)">{{ item.namasubkategori }}</ion-option>
         </ion-select>
         </ion-label>
       </ion-item>
@@ -45,6 +55,19 @@
 </ion-header>
 
 
-<ion-content padding>
-    
+<ion-content>
+<ion-card style="margin-top:10px">
+    <ion-list class="kategori-list">
+        <ion-row>
+            <ion-col *ngFor="let item2 of items.koleksi2">
+                <p align="center"><img src="http://forkomperbekelbali.com/desa/public/fotoupload/{{item2.foto}}"></p>
+                <h2><b>{{item2.namaproduk}}</b></h2>
+                <h3>{{item2.harga}}</h3>
+                <ion-buttons>
+                    <button ion-button block (click)="tombolbeli(item2)">Beli</button>
+                </ion-buttons>
+            </ion-col>       
+        </ion-row>
+    </ion-list>
+</ion-card>
 </ion-content>

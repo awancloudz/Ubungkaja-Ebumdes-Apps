@@ -45,48 +45,17 @@
             </ion-item>
         </ion-slide>
     </ion-slides>
-
-      
+  
 <ion-card style="margin-top:10px">
     <ion-title class="kategori-title">Kategori</ion-title>
-        
     <ion-list class="kategori-list">
-            
         <ion-row>
-                
-            <ion-col>
-                <button style="background-image:url('Sembako.jpg')" class="kategori-avatar" (click)="tombolsembako()">
-                Sembako
-                </button>
-                
+            <ion-col *ngFor="let item of items" (click)="tomboldetail(item)">
+                <img width="130px" height="130px" style="border-radius: 10px;" src="http://forkomperbekelbali.com/desa/public/fotoupload/{{item.foto}}"/>
+                <div class="card-title">{{item.namakategori}}</div>
             </ion-col>
-                                
-            <ion-col>
-                <button style="background-image:url('peralatan_rumah_tangga.jpg')" class="kategori-avatar" (click)="tombolperalatan()">
-                Peralatan Rumah Tangga
-                </button>
-            </ion-col>
-                
         </ion-row>
-                
-        <ion-row>
-                
-            <ion-col>
-                <button style="background-image:url('Bahan_bangunan.jpg')" class="kategori-avatar" (click)="openPage(p)">
-                Bahan Bangunan
-                </button>
-            </ion-col>
-                
-            <ion-col>
-                <button style="background-image:url('Furniture.jpg')" class="kategori-avatar" (click)="openPage(p)">
-                Furniture
-                </button>
-            </ion-col>
-                
-        </ion-row>
-        
     </ion-list>
-
 </ion-card>
 
 </ion-content>
