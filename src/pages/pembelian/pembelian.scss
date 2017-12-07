@@ -1,3 +1,29 @@
 page-pembelian {
 
 }
+
+.pembelian-container {
+    height: 110px;
+    width: 95% !important;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px !important;
+    position: relative;
+    padding: 0px;
+}
+
+.pembelian-col-x {
+    max-width: 110px;
+}
+
+.pembelian-picture-item {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.pembelian-col-y {
+    width: auto !important;
+    height: 130px;
+    text-align: left;
+}

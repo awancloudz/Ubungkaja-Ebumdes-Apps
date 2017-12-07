@@ -5,10 +5,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { KategoriPage,KategoriDetailPage } from '../pages/kategori/kategori';
-import { PembelianPage } from '../pages/pembelian/pembelian';
+import { PembelianPage,PembelianDetailPage } from '../pages/pembelian/pembelian';
 import { PenjualanPage } from '../pages/penjualan/penjualan';
 import { DompetPage } from '../pages/dompet/dompet';
-import { PesanPage } from '../pages/pesan/pesan';
+import { PesanPage,PesanDetailPage } from '../pages/pesan/pesan';
 import { SettingPage } from '../pages/setting/setting';
 import { TokoPage } from '../pages/toko/toko';
 import { KeranjangPage } from '../pages/keranjang/keranjang';

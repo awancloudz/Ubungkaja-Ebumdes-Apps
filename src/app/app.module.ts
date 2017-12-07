@@ -7,10 +7,10 @@ import { HttpModule} from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { KategoriPage,KategoriDetailPage } from '../pages/kategori/kategori';
-import { PembelianPage } from '../pages/pembelian/pembelian';
+import { PembelianPage,PembelianDetailPage } from '../pages/pembelian/pembelian';
 import { PenjualanPage } from '../pages/penjualan/penjualan';
 import { DompetPage } from '../pages/dompet/dompet';
-import { PesanPage } from '../pages/pesan/pesan';
+import { PesanPage,PesanDetailPage } from '../pages/pesan/pesan';
 import { SettingPage } from '../pages/setting/setting';
 import { TokoPage } from '../pages/toko/toko';
 import { KeranjangPage,KeranjangcreatePage } from '../pages/keranjang/keranjang';
@@ -29,9 +29,11 @@ import { KeranjangserviceProvider } from '../providers/keranjangservice/keranjan
     //KategoriPage,
     //KategoriDetailPage,
     PembelianPage,
+    PembelianDetailPage,
     PenjualanPage,
     DompetPage,
     PesanPage,
+    PesanDetailPage,
     SettingPage,
     TokoPage,
     KeranjangPage,
@@ -51,9 +53,11 @@ import { KeranjangserviceProvider } from '../providers/keranjangservice/keranjan
     KategoriPage,
     KategoriDetailPage,
     PembelianPage,
+    PembelianDetailPage,
     PenjualanPage,
     DompetPage,
     PesanPage,
+    PesanDetailPage,
     SettingPage,
     TokoPage,
     KeranjangPage,
