@@ -6,13 +6,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { KategoriPage,KategoriDetailPage } from '../pages/kategori/kategori';
 import { PembelianPage,PembelianDetailPage } from '../pages/pembelian/pembelian';
-import { PenjualanPage } from '../pages/penjualan/penjualan';
 import { DompetPage } from '../pages/dompet/dompet';
 import { PesanPage,PesanDetailPage } from '../pages/pesan/pesan';
 import { SettingPage } from '../pages/setting/setting';
-import { TokoPage } from '../pages/toko/toko';
 import { KeranjangPage } from '../pages/keranjang/keranjang';
 import { SearchPage } from '../pages/search/search';
+import { TokoPage } from '../pages/toko/toko';
+import { TokokategoriPage } from '../pages/tokokategori/tokokategori';
+import { TokokeranjangPage } from '../pages/tokokeranjang/tokokeranjang';
+import { TokopemesananPage } from '../pages/tokopemesanan/tokopemesanan';
+import { TokopenjualanPage,TokopenjualanDetailPage } from '../pages/tokopenjualan/tokopenjualan';
+import { TokoprodukPage } from '../pages/tokoproduk/tokoproduk';
+import { TokoprofilePage } from '../pages/tokoprofile/tokoprofile';
+import { TokosearchPage } from '../pages/tokosearch/tokosearch';
 
 @Component({
   templateUrl: 'app.html'

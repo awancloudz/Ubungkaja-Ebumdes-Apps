@@ -13,6 +13,18 @@
       </button>
       
     <ion-title style="margin-left: -15px">Toko saya</ion-title>
+
+    <ion-buttons start>
+      <button ion-button icon-only>
+          <ion-icon name="search" style="zoom:1.3"></ion-icon>
+      </button>
+  </ion-buttons>
+
+  <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="cart" style="zoom:1.2" ></ion-icon>
+      </button>
+  </ion-buttons>
     
   </ion-navbar>
 
@@ -21,38 +33,13 @@
 
 <ion-content>
 
-<div>
-  <ion-segment [(ngModel)]="toko_saya" class="nama_segment">
-    <ion-segment-button value="Produk">
-    Daftar Produk
-    </ion-segment-button>
-    <ion-segment-button value="penjualan">
-    Penjualan
-    </ion-segment-button>
-    <ion-segment-button value="pemesanan">
-    Pemesanan
-    </ion-segment-button>
-  </ion-segment>
-</div>
-
-<div [ngSwitch]="toko_saya">
-  <ion-list *ngSwitchCase="'Produk'">
-    <ion-item>
-          
-    </ion-item>
-  </ion-list>
-
-  <ion-list *ngSwitchCase="'penjualan'">
-    <ion-item>
-      
-    </ion-item>
-  </ion-list>
-
-  <ion-list *ngSwitchCase="'pemesanan'">
-    <ion-item>
-      
-    </ion-item>
-  </ion-list>
-</div>
-
+  <ion-tabs>
+    <ion-tab [root]="tab1Root" tabTitle="Kategori" tabIcon="ios-pricetags"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Pemesanan" tabIcon="ios-paw"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="Penjualan" tabIcon="ios-nuclear"></ion-tab>
+    <ion-tab [root]="tab4Root" tabTitle="Produk" tabIcon="logo-octocat"></ion-tab>
+    <ion-tab [root]="tab5Root" tabTitle="Profile" tabIcon="md-person"></ion-tab>
+  </ion-tabs>
+  
 </ion-content>
+

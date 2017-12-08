@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, ActionSheetController, LoadingController ,ToastController,AlertController } from 'ionic-angular';
+import { TokokategoriPage } from '../tokokategori/tokokategori';
+import { TokopemesananPage } from '../tokopemesanan/tokopemesanan';
+import { TokopenjualanPage } from '../tokopenjualan/tokopenjualan';
+import { TokoprodukPage } from '../tokoproduk/tokoproduk';
+import { TokoprofilePage } from '../tokoprofile/tokoprofile';
 
 /**
  * Generated class for the TokoPage page.
@@ -15,7 +20,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TokoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  tab1Root = TokokategoriPage;
+  tab2Root = TokopemesananPage;
+  tab3Root = TokopenjualanPage;
+  tab4Root = TokoprodukPage;
+  tab5Root = TokoprofilePage;
+
+  constructor ( public nav: NavController,
+              public platform: Platform,
+              public actionSheetCtrl: ActionSheetController,
+              public alertCtrl: AlertController,
+              public loadincontroller:LoadingController,
+              public _toast:ToastController,) {
   }
 
   ionViewDidLoad() {
