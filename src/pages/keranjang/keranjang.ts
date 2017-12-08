@@ -5,6 +5,7 @@ import { KeranjangserviceProvider } from '../../providers/keranjangservice/keran
 import { KeranjangArray } from '../../pages/keranjang/keranjangarray';
 import { NavController, NavParams, Platform, ActionSheetController, LoadingController ,ToastController,AlertController } from 'ionic-angular';
 import { SearchPage } from '../../pages/search/search';
+import { PembelianPage } from '../pembelian/pembelian';
 
 /**
  * Generated class for the KeranjangPage page.
@@ -20,7 +21,7 @@ import { SearchPage } from '../../pages/search/search';
 })
 export class KeranjangPage {
   items:KeranjangArray[]=[];
-  jumlah:Number;
+  jumlah:any;
   constructor(public nav: NavController,public platform: Platform,public actionSheetCtrl: ActionSheetController,public alertCtrl: AlertController,
     public loadincontroller:LoadingController,public _toast:ToastController,public keranjangservice:KeranjangserviceProvider) {
 
@@ -94,7 +95,7 @@ tomboledit(item,lama:KeranjangArray,baru:KeranjangArray){
   });
   //Loading Data
   let loadingdata=this.loadincontroller.create({
-      content:"Mengubah Data..."
+      content:"Mengubah Item..."
   });
   loadingdata.present();
   //Mengambil value dari edit field untuk dimasukkan ke UsulanArray
@@ -117,8 +118,11 @@ tomboledit(item,lama:KeranjangArray,baru:KeranjangArray){
     }
   );  
 }
-tombolsearch () {
+tombolsearch() {
   this.nav.push (SearchPage);
+}
+tombolkirim() {
+  this.nav.setRoot(PembelianPage);
 }
 }
 
@@ -148,7 +152,7 @@ ionViewDidLoad(item2) {
     });
     //Loading Data
     let loadingdata=this.loadincontroller.create({
-        content:"Mengirim Data..."
+        content:"Menambahkan ke keranjang..."
     });
     loadingdata.present();
     //Mengambil value dari input field untuk dimasukkan ke UsulanArray

@@ -59,10 +59,11 @@
 <ion-card style="margin-top:10px">
     <ion-list class="kategori-list">
         <ion-row>
-            <ion-col *ngFor="let item2 of items.koleksi2">
+            <ion-col *ngFor="let item2 of items.koleksi2" col-6>
                 <p align="center"><img src="http://forkomperbekelbali.com/desa/public/fotoupload/{{item2.foto}}"></p>
                 <h2><b>{{item2.namaproduk}}</b></h2>
-                <h3>{{item2.harga}}</h3>
+                <h3>Stok : {{item2.stok}}</h3>
+                <h3>Rp. {{item2.harga}},-</h3>
                 <ion-buttons>
                     <button ion-button block (click)="tombolbeli(item2)">Beli</button>
                 </ion-buttons>

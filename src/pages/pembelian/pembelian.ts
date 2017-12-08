@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, ActionSheetController, LoadingController ,ToastController,AlertController } from 'ionic-angular';
+//Tambahkan Provider
+import { PembelianserviceProvider } from '../../providers/pembelianservice/pembelianservice';
 import { PembelianArray } from '../../pages/pembelian/pembelianarray';
-
 /**
  * Generated class for the PembelianPage page.
  *
@@ -23,11 +24,31 @@ export class PembelianPage {
               public actionSheetCtrl: ActionSheetController,
               public alertCtrl: AlertController,
               public loadincontroller:LoadingController,
-              public _toast:ToastController,) {
+              public _toast:ToastController,
+              public pembelianservise:PembelianserviceProvider
+              ) {
             }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PembelianPage');
+    //Loading bar
+    let loadingdata=this.loadincontroller.create({
+      content:"Loading..."
+    });
+    loadingdata.present();
+    //Tampilkan data dari server
+    this.pembelianservise.tampilkanpembelian().subscribe(
+      //Jika data sudah berhasil di load
+      (data:PembelianArray[])=>{
+        this.items=data;
+      },
+      //Jika Error
+      function (error){   
+      },
+      //Tutup Loading
+      function(){
+        loadingdata.dismiss();
+      }
+    );
   }
 
   pembeliandetail () {
@@ -45,7 +66,7 @@ export class PembelianDetailPage {
   id_warga:Number;
   id_toko:Number;
   tanggal:String;
-  isi_pesan:String;
+  subtotal:Number
   items:PembelianArray[]=[];
  
   constructor ( params: NavParams,

@@ -29,7 +29,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { KategoriserviceProvider } from '../providers/kategoriservice/kategoriservice';
 import { KategoriPageModule } from '../pages/kategori/kategori.module';
 import { KeranjangserviceProvider } from '../providers/keranjangservice/keranjangservice';
-
+import { PembelianserviceProvider } from '../providers/pembelianservice/pembelianservice';
 
 @NgModule({
   declarations: [
@@ -85,6 +85,7 @@ import { KeranjangserviceProvider } from '../providers/keranjangservice/keranjan
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     KategoriserviceProvider,
     KeranjangserviceProvider,
+    PembelianserviceProvider
   ]
 })
 export class AppModule {}

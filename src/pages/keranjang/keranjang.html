@@ -25,14 +25,13 @@
 
 <ion-content>
 
-  <ion-card class="card-container" *ngFor="let item of items">
+  <ion-card class="card-container" *ngFor="let item of items.koleksi">
       <ion-row no-padding>
 
             <ion-col class="xxxx">             
                     <img src="http://forkomperbekelbali.com/desa/public/fotoupload/{{item.produktoko.foto}}" class="picture-item">
 
                     <select class="dropdown-quantity" [(ngModel)]="jumlah" (change)="tomboledit(item)">
-                      <option value="{{item.jumlah}}" selected="selected">{{item.jumlah}}</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -48,7 +47,10 @@
 
             <ion-col class="yyyy">
                   <h2>{{ item.produktoko.namaproduk }}</h2>
-                  <h2 class="harga-barang"><b>Rp {{item.produktoko.harga}},-</b></h2>
+                  <h2 class="harga-barang"><b>Rp. {{item.produktoko.harga}},-</b>
+                  <br>Qty : {{item.jumlah}}
+                  <br>Total : Rp. {{ item.jumlah * item.produktoko.harga }},-
+                  </h2>
             </ion-col>
 
             <ion-col class="zzzz">
@@ -63,8 +65,13 @@
   </ion-card>
 
 </ion-content>
-<ion-footer>
+<ion-footer style="text-align:center">
+  <ion-navbar>
+  <h6 *ngFor="let item2 of items.koleksi2">
+      Total Pembayaran : <b>Rp. {{item2.subtotal}},-</b>  
+  </h6>
+  </ion-navbar>
   <ion-buttons>
-    <button ion-button block>Kirim</button>
+    <button ion-button block (click)="tombolkirim()">Kirim</button>
   </ion-buttons>
 </ion-footer>
