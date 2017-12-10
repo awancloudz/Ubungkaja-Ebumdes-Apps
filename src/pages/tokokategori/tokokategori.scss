@@ -1,3 +1,18 @@
 page-tokokategori {
 
+    .tokokategori-container {
+        height: 250px;
+        text-align: center;
+    }
+    
+    .tokokategori-picture {
+        height: 130px;
+        background-size: cover;
+    }
+    
+    .tokokategori-button {
+        height: 24px;
+        width: 80px;
+        text-transform: none;
+    }
 }
