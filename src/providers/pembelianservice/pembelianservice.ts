@@ -25,6 +25,11 @@ export class PembelianserviceProvider {
    return this._http.get(this.url)
    .map((response:Response)=>response.json());
   }
+  tampilkandetail(item:PembelianArray)
+  {
+   return this._http.get(this.url+"/"+item.id)
+   .map((response:Response)=>response.json());
+  }
   //Tambah pembelian baru
   tambahpembelian(item:PembelianArray){
     let body = JSON.stringify(item);

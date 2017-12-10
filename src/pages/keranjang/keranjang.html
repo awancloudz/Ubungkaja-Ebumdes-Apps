@@ -65,13 +65,17 @@
   </ion-card>
 
 </ion-content>
-<ion-footer style="text-align:center">
+<ion-footer style="text-align:center" *ngFor="let item2 of items.koleksi2">
   <ion-navbar>
-  <h6 *ngFor="let item2 of items.koleksi2">
+  <h6 *ngIf="item2.subtotal == 0">
+      [ Keranjang Kosong ]
+  </h6>
+  <h6 *ngIf="item2.subtotal != 0">
       Total Pembayaran : <b>Rp. {{item2.subtotal}},-</b>  
   </h6>
   </ion-navbar>
   <ion-buttons>
-    <button ion-button block (click)="tombolkirim()">Kirim</button>
+    <button *ngIf="item2.subtotal == 0" ion-button block (click)="tombolbeli()">Beli</button>
+    <button *ngIf="item2.subtotal != 0" ion-button block (click)="tombolkirim(item2)">Kirim</button>
   </ion-buttons>
 </ion-footer>

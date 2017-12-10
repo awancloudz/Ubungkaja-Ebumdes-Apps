@@ -8,7 +8,7 @@ import { HttpModule} from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { KategoriPage,KategoriDetailPage } from '../pages/kategori/kategori';
-import { PembelianPage,PembelianDetailPage } from '../pages/pembelian/pembelian';
+import { PembelianPage,PembelianDetailPage,PembelianCreatePage } from '../pages/pembelian/pembelian';
 import { DompetPage } from '../pages/dompet/dompet';
 import { PesanPage,PesanDetailPage } from '../pages/pesan/pesan';
 import { SettingPage } from '../pages/setting/setting';
@@ -36,7 +36,7 @@ import { PembelianserviceProvider } from '../providers/pembelianservice/pembelia
     MyApp,
     HomePage,
     //KategoriPage, KategoriDetailPage,
-    PembelianPage, PembelianDetailPage,
+    PembelianPage, PembelianDetailPage,PembelianCreatePage,
     DompetPage,
     PesanPage, PesanDetailPage,
     SettingPage,
@@ -62,7 +62,7 @@ import { PembelianserviceProvider } from '../providers/pembelianservice/pembelia
     MyApp,
     HomePage,
     KategoriPage, KategoriDetailPage,
-    PembelianPage, PembelianDetailPage,
+    PembelianPage, PembelianDetailPage,PembelianCreatePage,
     DompetPage,
     PesanPage, PesanDetailPage,
     SettingPage,

@@ -5,8 +5,8 @@ import { KeranjangserviceProvider } from '../../providers/keranjangservice/keran
 import { KeranjangArray } from '../../pages/keranjang/keranjangarray';
 import { NavController, NavParams, Platform, ActionSheetController, LoadingController ,ToastController,AlertController } from 'ionic-angular';
 import { SearchPage } from '../../pages/search/search';
-import { PembelianPage } from '../pembelian/pembelian';
-
+import { PembelianPage,PembelianCreatePage } from '../pembelian/pembelian';
+import { HomePage } from '../../pages/home/home';
 /**
  * Generated class for the KeranjangPage page.
  *
@@ -121,8 +121,11 @@ tomboledit(item,lama:KeranjangArray,baru:KeranjangArray){
 tombolsearch() {
   this.nav.push (SearchPage);
 }
-tombolkirim() {
-  this.nav.setRoot(PembelianPage);
+tombolbeli() {
+  this.nav.setRoot(HomePage);
+}
+tombolkirim(item2) {
+  this.nav.setRoot(PembelianCreatePage, { item2: item2 });
 }
 }
 

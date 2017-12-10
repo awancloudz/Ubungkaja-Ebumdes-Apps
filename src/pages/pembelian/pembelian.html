@@ -29,7 +29,7 @@
       <ion-badge *ngIf="item.status == 'selesai'" color="secondary" item-end>Sukses</ion-badge>
     </ion-item-divider>
      
-    <button ion-item style="margin-top: -20px; height: 75px" (click)="pembeliandetail()">
+    <button ion-item style="margin-top: -20px; height: 75px" (click)="pembeliandetail(item)">
       <ion-item>
         <h5>Kode Transaksi : <b>#{{item.id}}</b></h5>
         <h5>Total Pembayaran : <b>Rp {{item.subtotal}},-</b></h5>
