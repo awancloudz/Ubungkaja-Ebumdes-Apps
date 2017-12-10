@@ -51,8 +51,10 @@
     <ion-list class="kategori-list">
         <ion-row>
             <ion-col *ngFor="let item of items" (click)="tomboldetail(item)">
-                <img width="130px" height="130px" style="border-radius: 10px;" src="http://forkomperbekelbali.com/desa/public/fotoupload/{{item.foto}}"/>
-                <div class="card-title">{{item.namakategori}}</div>
+                <ion-buttons>
+                    <img class="kategori-avatar" src="http://forkomperbekelbali.com/desa/public/fotoupload/{{item.foto}}">
+                    <div class="kategori-nama">{{item.namakategori}}</div>
+                </ion-buttons>
             </ion-col>
         </ion-row>
     </ion-list>

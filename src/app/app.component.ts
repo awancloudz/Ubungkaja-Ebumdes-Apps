@@ -14,9 +14,9 @@ import { SearchPage } from '../pages/search/search';
 import { TokoPage } from '../pages/toko/toko';
 import { TokokategoriPage } from '../pages/tokokategori/tokokategori';
 import { TokokeranjangPage } from '../pages/tokokeranjang/tokokeranjang';
-import { TokopemesananPage } from '../pages/tokopemesanan/tokopemesanan';
+import { TokopemesananPage,TokopemesananDetailPage } from '../pages/tokopemesanan/tokopemesanan';
 import { TokopenjualanPage,TokopenjualanDetailPage } from '../pages/tokopenjualan/tokopenjualan';
-import { TokoprodukPage } from '../pages/tokoproduk/tokoproduk';
+import { TokoprodukPage, TokoprodukCreatePage } from '../pages/tokoproduk/tokoproduk';
 import { TokoprofilePage } from '../pages/tokoprofile/tokoprofile';
 import { TokosearchPage } from '../pages/tokosearch/tokosearch';
 
@@ -35,12 +35,12 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', icon: "home", color:"icongreen", component: HomePage },
-      { title: 'Kategori', icon: "tags", color:"icongreen", component: KategoriPage },
-      { title: 'Pembelian', icon: "money", color:"icongreen", component: PembelianPage },
-      { title: 'Dompet', icon: "credit-card", color:"icongreen", component: DompetPage },
-      { title: 'Pesan', icon: "envelope-o", color:"icongreen", component: PesanPage },
-      { title: 'Setting', icon: "gears", color:"icongreen", component: SettingPage },
+      { title: 'Home', icon: "home", color:"iconprimary", component: HomePage },
+      { title: 'Kategori', icon: "tags", color:"iconprimary", component: KategoriPage },
+      { title: 'Pembelian', icon: "money", color:"iconprimary", component: PembelianPage },
+      { title: 'Dompet', icon: "credit-card", color:"iconprimary", component: DompetPage },
+      { title: 'Pesan', icon: "envelope-o", color:"iconprimary", component: PesanPage },
+      { title: 'Setting', icon: "gears", color:"iconprimary", component: SettingPage },
     ];
 
   }

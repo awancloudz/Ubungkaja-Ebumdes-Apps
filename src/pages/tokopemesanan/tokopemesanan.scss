@@ -1,3 +1,28 @@
 page-tokopemesanan {
 
+    .tokopemesanan-container {
+        height: 110px;
+        width: 95% !important;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 10px !important;
+        position: relative;
+        padding: 0px;
+    }
+    
+    .tokopemesanan-col-x {
+        max-width: 110px;
+    }
+    
+    .tokopemesanan-picture-item {
+        border-radius: 10px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .tokopemesanan-col-y {
+        width: auto !important;
+        height: 130px;
+        text-align: left;
+    }
 }

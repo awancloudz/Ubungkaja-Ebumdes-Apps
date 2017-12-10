@@ -20,11 +20,11 @@ import { TokoprofilePage } from '../tokoprofile/tokoprofile';
 })
 export class TokoPage {
 
-  tab1Root = TokokategoriPage;
-  tab2Root = TokopemesananPage;
+  tab1Root = TokoprofilePage;
+  tab2Root = TokoprodukPage;
   tab3Root = TokopenjualanPage;
-  tab4Root = TokoprodukPage;
-  tab5Root = TokoprofilePage;
+  tab4Root = TokopemesananPage;
+  tab5Root = TokokategoriPage;
 
   constructor ( public nav: NavController,
               public platform: Platform,

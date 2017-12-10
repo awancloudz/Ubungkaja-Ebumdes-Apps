@@ -17,9 +17,9 @@ import { SearchPage } from '../pages/search/search';
 import { TokoPage } from '../pages/toko/toko';
 import { TokokategoriPage } from '../pages/tokokategori/tokokategori';
 import { TokokeranjangPage } from '../pages/tokokeranjang/tokokeranjang';
-import { TokopemesananPage } from '../pages/tokopemesanan/tokopemesanan';
+import { TokopemesananPage,TokopemesananDetailPage } from '../pages/tokopemesanan/tokopemesanan';
 import { TokopenjualanPage,TokopenjualanDetailPage } from '../pages/tokopenjualan/tokopenjualan';
-import { TokoprodukPage } from '../pages/tokoproduk/tokoproduk';
+import { TokoprodukPage,TokoprodukCreatePage } from '../pages/tokoproduk/tokoproduk';
 import { TokoprofilePage } from '../pages/tokoprofile/tokoprofile';
 import { TokosearchPage } from '../pages/tokosearch/tokosearch';
 
@@ -35,22 +35,21 @@ import { PembelianserviceProvider } from '../providers/pembelianservice/pembelia
   declarations: [
     MyApp,
     HomePage,
-    //KategoriPage,
-    //KategoriDetailPage,
+    //KategoriPage, KategoriDetailPage,
     PembelianPage, PembelianDetailPage,
     DompetPage,
     PesanPage, PesanDetailPage,
     SettingPage,
+    KeranjangPage, KeranjangcreatePage,
+    SearchPage,
     TokoPage,
     TokokategoriPage,
     TokokeranjangPage,
-    TokopemesananPage,
+    TokopemesananPage, TokopemesananDetailPage,
     TokopenjualanPage, TokopenjualanDetailPage,
-    TokoprodukPage,
+    TokoprodukPage, TokoprodukCreatePage,
     TokoprofilePage,
     TokosearchPage,
-    KeranjangPage, KeranjangcreatePage,
-    SearchPage,
   ],
   imports: [
     BrowserModule,
@@ -72,9 +71,9 @@ import { PembelianserviceProvider } from '../providers/pembelianservice/pembelia
     TokoPage,
     TokokategoriPage,
     TokokeranjangPage,
-    TokopemesananPage,
+    TokopemesananPage, TokopemesananDetailPage,
     TokopenjualanPage, TokopenjualanDetailPage,
-    TokoprodukPage,
+    TokoprodukPage, TokoprodukCreatePage,
     TokoprofilePage,
     TokosearchPage,
     
