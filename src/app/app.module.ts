@@ -30,6 +30,7 @@ import { KategoriserviceProvider } from '../providers/kategoriservice/kategorise
 import { KategoriPageModule } from '../pages/kategori/kategori.module';
 import { KeranjangserviceProvider } from '../providers/keranjangservice/keranjangservice';
 import { PembelianserviceProvider } from '../providers/pembelianservice/pembelianservice';
+import { SearchserviceProvider } from '../providers/searchservice/searchservice';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { PembelianserviceProvider } from '../providers/pembelianservice/pembelia
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     KategoriserviceProvider,
     KeranjangserviceProvider,
-    PembelianserviceProvider
+    PembelianserviceProvider,
+    SearchserviceProvider
   ]
 })
 export class AppModule {}
