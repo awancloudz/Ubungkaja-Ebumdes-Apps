@@ -1,5 +1,5 @@
 import { Component,ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams,Searchbar } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,Searchbar,AlertController } from 'ionic-angular';
 import { SearchArray } from '../../pages/search/searchArray';
 //Tambahkan Provider
 import { SearchserviceProvider } from '../../providers/searchservice/searchservice';
@@ -25,7 +25,7 @@ export class SearchPage {
   items:SearchArray[]=[];
   items2:SearchArray[]=[];
   @ViewChild('searchbar') searchbar:Searchbar;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public searchservice:SearchserviceProvider) {
+  constructor(public alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams,public searchservice:SearchserviceProvider) {
   }
 
   ionViewDidEnter() {
@@ -63,6 +63,16 @@ export class SearchPage {
     }
   }
   tombolbeli(item2) {
-    this.navCtrl.push(KeranjangcreatePage, {item2: item2});
+    let alert = this.alertCtrl.create({
+      title: 'Informasi',
+      subTitle: 'Stok Kosong',
+      buttons: ['OK']
+    });
+    if(item2.stok < 1){
+      alert.present();
+    }
+    else{
+      this.navCtrl.push(KeranjangcreatePage, {item2: item2});
+    }
   }
 }

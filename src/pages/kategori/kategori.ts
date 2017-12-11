@@ -113,6 +113,16 @@ ionViewDidLoad() {
   }
 
   tombolbeli(item2) {
-    this.nav.push(KeranjangcreatePage, {item2: item2});
+    let alert = this.alertCtrl.create({
+      title: 'Informasi',
+      subTitle: 'Stok Kosong',
+      buttons: ['OK']
+    });
+    if(item2.stok < 1){
+      alert.present();
+    }
+    else{
+      this.nav.push(KeranjangcreatePage, {item2: item2});
+    }
   }
 }

@@ -22,6 +22,7 @@ import { HomePage } from '../../pages/home/home';
 export class KeranjangPage {
   items:KeranjangArray[]=[];
   jumlah:any;
+  stok:any;
   constructor(public nav: NavController,public platform: Platform,public actionSheetCtrl: ActionSheetController,public alertCtrl: AlertController,
     public loadincontroller:LoadingController,public _toast:ToastController,public keranjangservice:KeranjangserviceProvider) {
 
@@ -93,33 +94,47 @@ tomboledit(item,lama:KeranjangArray,baru:KeranjangArray){
     subTitle: 'Edit Item Sukses',
     buttons: ['OK']
   });
+  let alert2 = this.alertCtrl.create({
+    title: 'Informasi',
+    subTitle: 'Stok Tidak Mencukupi',
+    buttons: ['OK']
+  });
   //Loading Data
   let loadingdata=this.loadincontroller.create({
       content:"Mengubah Item..."
   });
-  loadingdata.present();
-  //Mengambil value dari edit field untuk dimasukkan ke UsulanArray
-  this.keranjangservice.editkeranjang(new KeranjangArray(item.id,item.id_warga,item.id_produktoko,this.jumlah))
-  .subscribe(
-    (data:any)=>{
-      //Kirim Variable UsulanArray ke Usulanservice.ts
-      if(data.affectedRows==1)
-      {
-        this.items[this.items.indexOf(lama)]=baru;
-      }
-      loadingdata.dismiss();
-      this.nav.setRoot(KeranjangPage);
-    },
-    function(error){
 
-    },
-    function(){
-      alert.present();
-    }
-  );  
+  //Cek Stok
+  this.stok = item.produktoko.stok;
+  if(this.jumlah > this.stok){
+    alert2.present();
+  }
+  else{
+    loadingdata.present();
+    //Mengambil value dari edit field untuk dimasukkan ke UsulanArray
+    this.keranjangservice.editkeranjang(new KeranjangArray(item.id,item.id_warga,item.id_produktoko,this.jumlah))
+    .subscribe(
+      (data:any)=>{
+        //Kirim Variable UsulanArray ke Usulanservice.ts
+        if(data.affectedRows==1)
+        {
+          this.items[this.items.indexOf(lama)]=baru;
+        }
+        loadingdata.dismiss();
+        this.nav.setRoot(KeranjangPage);
+      },
+      function(error){
+
+      },
+      function(){
+        alert.present();
+      }
+    );   
+  }
+   
 }
 tombolsearch() {
-  this.nav.push (SearchPage);
+  this.nav.push(SearchPage);
 }
 tombolbeli() {
   this.nav.setRoot(HomePage);
@@ -139,6 +154,7 @@ export class KeranjangcreatePage {
   id_warga:Number;
   item2;
   items:KeranjangArray[]=[];
+  stok:any;
   constructor(public params: NavParams,public nav: NavController,public platform: Platform,public actionSheetCtrl: ActionSheetController,public alertCtrl: AlertController,
     public loadincontroller:LoadingController,public _toast:ToastController,public keranjangservice:KeranjangserviceProvider) {
       this.item2 = params.data.item2;
@@ -157,6 +173,7 @@ ionViewDidLoad(item2) {
     let loadingdata=this.loadincontroller.create({
         content:"Menambahkan ke keranjang..."
     });
+    
     loadingdata.present();
     //Mengambil value dari input field untuk dimasukkan ke UsulanArray
     this.keranjangservice.tambahkeranjang(new KeranjangArray(this.id,this.id_warga,this.item2.id,1))
@@ -167,7 +184,7 @@ ionViewDidLoad(item2) {
         this.nav.setRoot(KeranjangPage);
       },
       function(error){
-
+  
       },
       function(){
         //alert.present();
