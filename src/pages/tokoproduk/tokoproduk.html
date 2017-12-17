@@ -5,27 +5,26 @@
   Ionic pages and navigation.
 -->
 <ion-content>
-    <ion-card class="card-container">
+    <ion-card class="card-container" *ngFor="let item of items">
         <ion-row>
   
               <ion-col class="xxxx">             
-                      <img src="thumbnail-barang/dark.jpg" class="picture-item">
+                <img src="http://forkomperbekelbali.com/desa/public/fotoupload/{{item.foto}}" class="picture-item">
               </ion-col>
   
               <ion-col class="yyyy">
 
-                    <h2><b>Nama Produk</b></h2>
+                    <h2><b>{{item.namaproduk}}</b></h2>
                     <br>
-                    <h5>@ <b>Rp. 1.000.000,-</b></h5>
-                    <h5>Qty : <b>5</b></h5>
-                    <h5>Total : <b>Rp. 5.000.000,-</b></h5>
+                    <h5>Harga : <b>Rp. {{item.harga}},-</b></h5>
+                    <h5>Stok : <b>{{item.stok}}</b></h5>
 
               </ion-col>
   
               <ion-col class="zzzz">
 
                   <ion-buttons >
-                    <button ion-button clear icon-only class="delete-button">
+                    <button ion-button clear icon-only class="delete-button" (click)="tombolhapus(item)">
                       <i class="fa fa-trash-o" aria-hidden="true" style="zoom:1.5"></i>
                     </button>
 
@@ -38,25 +37,6 @@
   
         </ion-row>
     </ion-card>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <ion-fab bottom right>
         <ion-buttons>

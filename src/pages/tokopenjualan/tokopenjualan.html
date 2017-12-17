@@ -7,29 +7,18 @@
 
 <ion-content>
 
-  <ion-list>
+  <ion-list *ngFor="let item of items">
     <ion-item-group> 
-      <ion-item-divider color="light" style="height:25px">00 - Desember - 2017
-        <ion-badge item-end>Sukses</ion-badge>
+      <ion-item-divider color="light" style="height:25px">{{item.tanggal}}
+        <ion-badge *ngIf="item.status == 'order'" color="primary" item-end>Order</ion-badge>
+        <ion-badge *ngIf="item.status == 'kirim'" color="pending" item-end>Dikirim</ion-badge>
+        <ion-badge *ngIf="item.status == 'selesai'" color="secondary" item-end>Sukses</ion-badge>
       </ion-item-divider>
        
-      <button ion-item style="margin-top: -20px; height: 75px" (click)="penjualandetail()">
+      <button ion-item style="margin-top: -20px; height: 75px" (click)="penjualandetail(item)">
         <ion-item>
-          <h5>Kode Transaksi : <b>#123456789012345</b></h5>
-          <h5>Total Pendapatan : <b>Rp 1.000.000.-</b></h5>
-        </ion-item>
-      </button>
-    </ion-item-group>
-  
-    <ion-item-group> 
-      <ion-item-divider color="light" style="height:25px">00 - Januari - 2018
-        <ion-badge item-end>Sukses</ion-badge>
-      </ion-item-divider>
-         
-      <button ion-item style="margin-top: -20px; height: 75px">
-        <ion-item>
-          <h5>Kode Transaksi : <b>#0987654321012345</b></h5>
-          <h5>Total Pendapatan : <b>Rp 10.000.000.-</b></h5>
+          <h5>Kode Transaksi : <b>#{{item.id}}</b></h5>
+          <h5>Total Pembayaran : <b>Rp {{item.subtotal}}-</b></h5>
         </ion-item>
       </button>
     </ion-item-group>

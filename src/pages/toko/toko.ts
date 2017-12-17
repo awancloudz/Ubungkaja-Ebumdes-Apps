@@ -5,6 +5,7 @@ import { TokopemesananPage } from '../tokopemesanan/tokopemesanan';
 import { TokopenjualanPage } from '../tokopenjualan/tokopenjualan';
 import { TokoprodukPage } from '../tokoproduk/tokoproduk';
 import { TokoprofilePage } from '../tokoprofile/tokoprofile';
+import { TokokeranjangPage2 } from '../tokokeranjang/tokokeranjang';
 
 /**
  * Generated class for the TokoPage page.
@@ -34,8 +35,8 @@ export class TokoPage {
               public _toast:ToastController,) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TokoPage');
-  }
+tombolkeranjang() {
+  this.nav.push(TokokeranjangPage2);
+}
 
 }

@@ -8,51 +8,33 @@
     <ion-list>
       <ion-item-group>
       
-        <ion-item-divider color="light" style="height: 35px">00 - Desember - 2017
-          <ion-badge item-end>Sukses</ion-badge>
+        <ion-item-divider color="light" style="height: 35px" *ngFor="let item2 of items.koleksi2">{{item2.tanggal}}
+          <ion-badge *ngIf="item2.status == 'order'" color="primary" item-end>Order</ion-badge>
+          <ion-badge *ngIf="item2.status == 'kirim'" color="pending" item-end>Dikirim</ion-badge>
+          <ion-badge *ngIf="item2.status == 'selesai'" color="secondary" item-end>Sukses</ion-badge>
         </ion-item-divider>
   
-        <ion-card class="tokopemesanan-container">
+        <ion-card class="tokopemesanan-container" *ngFor="let item of items.koleksi">
           
           <ion-row no-padding>  
             <ion-col class="tokopemesanan-col-x">             
-              <img src="thumbnail-barang/dark.jpg" class="tokopemesanan-picture-item ">
+              <img src="http://forkomperbekelbali.com/desa/public/fotoupload/{{item.produkbumdes.foto}}" class="tokopemesanan-picture-item ">
             </ion-col>
   
             <ion-col class="tokopemesanan-col-y">
-              <h2><b>Nama Produk #1</b></h2>
+              <h2><b>{{item.produkbumdes.namaproduk}} #{{item.produkbumdes.kodeproduk}}</b></h2>
               <br>
-              <h3>Jumlah :<b> 10</b></h3>
-              <h3>Total Harga :<b> Rp 500.000,-</b></h3>
+              <h3>Jumlah :<b>{{item.jumlah}}</b></h3>
+              <h3>Total Harga :<b> Rp {{ item.jumlah * item.produkbumdes.harga }},-</b></h3>
             </ion-col>      
           </ion-row>
   
         </ion-card>
-  
-        <ion-card class="tokopemesanan-container">
-            
-            <ion-row no-padding>  
-              <ion-col class="tokopemesanan-col-x">             
-                <img src="thumbnail-barang/dark.jpg" class="tokopemesanan-picture-item ">
-              </ion-col>
-        
-              <ion-col class="tokopemesanan-col-y">
-                <h2><b>Nama Produk #2</b></h2>
-                <br>
-                <h3>Jumlah :<b> 5</b></h3>
-                <h3>Total Harga :<b> Rp 500.000,-</b></h3>
-              </ion-col>      
-            </ion-row>
-            
-          </ion-card>
           
       </ion-item-group>
     </ion-list>
   </ion-content>
   
   <ion-footer style="text-align:center">
-    <h6>Total Tagihan : <b>Rp 1.000.000.-</b></h6>
-    <ion-buttons>
-        <button ion-button block style="text-transform: none">Kirim</button>
-    </ion-buttons>
+    <h6 *ngFor="let item2 of items.koleksi2">Total Pembayaran : <b>Rp {{ item2.subtotal }},-</b></h6>
   </ion-footer>

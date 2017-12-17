@@ -1,0 +1,34 @@
+<!--
+  Generated template for the TokokategoriPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content>
+    <ion-list style="margin-top: -5px ; margin-left: -5px; margin-right: -5px;text-align: center;">
+  
+      <ion-row>   
+          <ion-col  *ngFor="let item2 of items.koleksi2" col-6>
+              
+            <ion-card class="tokokategori-container">
+              <img src="http://forkomperbekelbali.com/desa/public/fotoupload/{{item2.foto}}" class="tokokategori-picture">
+              
+                <h3><b>{{item2.namaproduk}}</b></h3>
+                <br>
+    
+              <h4>Stok : <b>{{item2.stok}} pcs</b></h4>
+              <h6><b>Rp {{item2.harga}}.-</b></h6>
+        
+              <ion-buttons style="text-align: center ; margin-top: 10px">
+                <button ion-button outline round class="tokokategori-button" (click)="tombolbeli(item2)">
+                Beli
+                </button>
+              </ion-buttons>
+        
+            </ion-card>
+          
+          </ion-col>
+        </ion-row>
+    </ion-list>
+  </ion-content>
+  

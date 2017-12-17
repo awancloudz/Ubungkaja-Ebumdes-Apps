@@ -15,9 +15,9 @@ import { SettingPage } from '../pages/setting/setting';
 import { KeranjangPage,KeranjangcreatePage } from '../pages/keranjang/keranjang';
 import { SearchPage } from '../pages/search/search';
 import { TokoPage } from '../pages/toko/toko';
-import { TokokategoriPage } from '../pages/tokokategori/tokokategori';
-import { TokokeranjangPage } from '../pages/tokokeranjang/tokokeranjang';
-import { TokopemesananPage,TokopemesananDetailPage } from '../pages/tokopemesanan/tokopemesanan';
+import { TokokategoriPage,TokokategoriDetailPage } from '../pages/tokokategori/tokokategori';
+import { TokokeranjangPage,TokokeranjangPage2,TokokeranjangCreatePage } from '../pages/tokokeranjang/tokokeranjang';
+import { TokopemesananPage,TokopemesananDetailPage,TokopemesananCreatePage } from '../pages/tokopemesanan/tokopemesanan';
 import { TokopenjualanPage,TokopenjualanDetailPage } from '../pages/tokopenjualan/tokopenjualan';
 import { TokoprodukPage,TokoprodukCreatePage } from '../pages/tokoproduk/tokoproduk';
 import { TokoprofilePage } from '../pages/tokoprofile/tokoprofile';
@@ -31,6 +31,12 @@ import { KategoriPageModule } from '../pages/kategori/kategori.module';
 import { KeranjangserviceProvider } from '../providers/keranjangservice/keranjangservice';
 import { PembelianserviceProvider } from '../providers/pembelianservice/pembelianservice';
 import { SearchserviceProvider } from '../providers/searchservice/searchservice';
+import { TokoprodukserviceProvider } from '../providers/tokoprodukservice/tokoprodukservice';
+import { TokokategoriserviceProvider } from '../providers/tokokategoriservice/tokokategoriservice';
+import { TokopenjualanserviceProvider } from '../providers/tokopenjualanservice/tokopenjualanservice';
+import { TokopemesananserviceProvider } from '../providers/tokopemesananservice/tokopemesananservice';
+import { TokokeranjangserviceProvider } from '../providers/tokokeranjangservice/tokokeranjangservice';
+import { TokosearchserviceProvider } from '../providers/tokosearchservice/tokosearchservice';
 
 @NgModule({
   declarations: [
@@ -44,9 +50,9 @@ import { SearchserviceProvider } from '../providers/searchservice/searchservice'
     KeranjangPage, KeranjangcreatePage,
     SearchPage,
     TokoPage,
-    TokokategoriPage,
-    TokokeranjangPage,
-    TokopemesananPage, TokopemesananDetailPage,
+    TokokategoriPage,TokokategoriDetailPage,
+    TokokeranjangPage,TokokeranjangPage2,TokokeranjangCreatePage,
+    TokopemesananPage, TokopemesananDetailPage,TokopemesananCreatePage,
     TokopenjualanPage, TokopenjualanDetailPage,
     TokoprodukPage, TokoprodukCreatePage,
     TokoprofilePage,
@@ -70,9 +76,9 @@ import { SearchserviceProvider } from '../providers/searchservice/searchservice'
     KeranjangPage, KeranjangcreatePage,
     SearchPage,
     TokoPage,
-    TokokategoriPage,
-    TokokeranjangPage,
-    TokopemesananPage, TokopemesananDetailPage,
+    TokokategoriPage,TokokategoriDetailPage,
+    TokokeranjangPage,TokokeranjangPage2,TokokeranjangCreatePage,
+    TokopemesananPage, TokopemesananDetailPage,TokopemesananCreatePage,
     TokopenjualanPage, TokopenjualanDetailPage,
     TokoprodukPage, TokoprodukCreatePage,
     TokoprofilePage,
@@ -86,7 +92,13 @@ import { SearchserviceProvider } from '../providers/searchservice/searchservice'
     KategoriserviceProvider,
     KeranjangserviceProvider,
     PembelianserviceProvider,
-    SearchserviceProvider
+    SearchserviceProvider,
+    TokoprodukserviceProvider,
+    TokokategoriserviceProvider,
+    TokopenjualanserviceProvider,
+    TokopemesananserviceProvider,
+    TokokeranjangserviceProvider,
+    TokosearchserviceProvider
   ]
 })
 export class AppModule {}
