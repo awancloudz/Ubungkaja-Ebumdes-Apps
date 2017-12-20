@@ -3,7 +3,10 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 //Mengambil modul http
 import { HttpModule} from '@angular/http';
-
+//Foto
+import { File } from '@ionic-native/file';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { Camera} from '@ionic-native/camera';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -16,7 +19,7 @@ import { KeranjangPage,KeranjangcreatePage } from '../pages/keranjang/keranjang'
 import { SearchPage } from '../pages/search/search';
 import { TokoPage } from '../pages/toko/toko';
 import { TokokategoriPage,TokokategoriDetailPage } from '../pages/tokokategori/tokokategori';
-import { TokokeranjangPage,TokokeranjangPage2,TokokeranjangCreatePage } from '../pages/tokokeranjang/tokokeranjang';
+import { TokokeranjangPage,TokokeranjangPage2,TokokeranjangCreatePage,TokokeranjangCreatePage2 } from '../pages/tokokeranjang/tokokeranjang';
 import { TokopemesananPage,TokopemesananDetailPage,TokopemesananCreatePage } from '../pages/tokopemesanan/tokopemesanan';
 import { TokopenjualanPage,TokopenjualanDetailPage } from '../pages/tokopenjualan/tokopenjualan';
 import { TokoprodukPage,TokoprodukCreatePage } from '../pages/tokoproduk/tokoproduk';
@@ -51,7 +54,7 @@ import { TokosearchserviceProvider } from '../providers/tokosearchservice/tokose
     SearchPage,
     TokoPage,
     TokokategoriPage,TokokategoriDetailPage,
-    TokokeranjangPage,TokokeranjangPage2,TokokeranjangCreatePage,
+    TokokeranjangPage,TokokeranjangPage2,TokokeranjangCreatePage,TokokeranjangCreatePage2,
     TokopemesananPage, TokopemesananDetailPage,TokopemesananCreatePage,
     TokopenjualanPage, TokopenjualanDetailPage,
     TokoprodukPage, TokoprodukCreatePage,
@@ -77,7 +80,7 @@ import { TokosearchserviceProvider } from '../providers/tokosearchservice/tokose
     SearchPage,
     TokoPage,
     TokokategoriPage,TokokategoriDetailPage,
-    TokokeranjangPage,TokokeranjangPage2,TokokeranjangCreatePage,
+    TokokeranjangPage,TokokeranjangPage2,TokokeranjangCreatePage,TokokeranjangCreatePage2,
     TokopemesananPage, TokopemesananDetailPage,TokopemesananCreatePage,
     TokopenjualanPage, TokopenjualanDetailPage,
     TokoprodukPage, TokoprodukCreatePage,
@@ -88,6 +91,9 @@ import { TokosearchserviceProvider } from '../providers/tokosearchservice/tokose
   providers: [
     StatusBar,
     SplashScreen,
+    File,
+    FileTransfer,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     KategoriserviceProvider,
     KeranjangserviceProvider,

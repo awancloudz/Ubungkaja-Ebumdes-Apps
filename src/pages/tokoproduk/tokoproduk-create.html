@@ -8,35 +8,78 @@
   <ion-list>
     
     <ion-item style="text-align: center">
-      <img src="thumbnail-barang/dark.jpg" style="height:180px; width:180px; border-radius:10%">
+      <img src="assets/imgs/product.png" style="height:180px; width:180px; border-radius:10%">
+    </ion-item>
+    <!-- FOTO -->
+    <ion-item>
+      Foto
+      <ion-slides pager>
+        <ion-slide *ngFor="let photo of photos; let id = index">
+          <ion-toolbar>
+            <ion-buttons end>
+              <button ion-button color="primary" (click)="deletePhoto(id)">
+                <ion-icon name="close"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-toolbar>
+          <img [src]="photo" class="slide-image" style="height: 70vh; width: auto; margin: auto; display: block;"/>
+          <ion-toolbar></ion-toolbar>
+        </ion-slide>
+      </ion-slides>
+    </ion-item>
+    <ion-input type="hidden" [(ngModel)]="id"></ion-input>
+    <ion-item>
+      <ion-label floating>Kode Produk</ion-label>
+      <ion-input type="text" [(ngModel)]="kodeproduk"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Nama produk</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label floating>Nama Produk</ion-label>
+      <ion-input type="text" [(ngModel)]="namaproduk"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Jumlah</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-label floating>Kategori Produk</ion-label>
+      <ion-select [(ngModel)]="id_kategoriproduk" interface="popover">
+        <ion-option ion-item value="1">Sembako</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Sub Kategori Produk</ion-label>
+      <ion-select [(ngModel)]="id_subkategoriproduk" interface="popover">
+        <ion-option ion-item value="3">Beras</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-input type="hidden" [(ngModel)]="id_toko" value="1"></ion-input>
+
+    <ion-item>
+      <ion-label floating>Stok</ion-label>
+      <ion-input type="number" [(ngModel)]="stok"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Harga</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="harga"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Diskon</ion-label>
+      <ion-input type="number" [(ngModel)]="diskon"></ion-input>
     </ion-item>
 
   </ion-list>
 
     <ion-fab bottom right>
       <ion-buttons>
-        <button ion-fab style="margin-bottom:10px">
+        <button ion-fab style="margin-bottom:10px" (click)="simpanproduk()">
           <ion-icon name="md-checkmark" style="zoom:1.4"></ion-icon>
         </button>
       </ion-buttons>
 
       <ion-buttons>
-        <button ion-fab>
+        <button ion-fab (click)="takePhoto()">
           <ion-icon name="ios-camera-outline" style="zoom:1.4" ></ion-icon>
         </button>
       </ion-buttons>

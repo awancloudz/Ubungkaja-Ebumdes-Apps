@@ -204,7 +204,7 @@ let confirm = this.alertCtrl.create({
             });
             //this.items.splice(this.items.indexOf(item),1);
             mes.present();
-            this.nav.setRoot(TokokeranjangPage);
+            this.nav.setRoot(TokokeranjangPage2);
           }
         );
         //End Hapus Item
@@ -310,6 +310,55 @@ ionViewDidLoad(item2) {
         //Push
         loadingdata.dismiss();
         this.nav.setRoot(TokokeranjangPage);
+      },
+      function(error){
+  
+      },
+      function(){
+        //alert.present();
+      }
+    );
+  }
+}
+
+@Component({
+  selector: 'page-create-tokokeranjang',
+  templateUrl: 'tokokeranjang.html',
+  //entryComponents: [ SearchPage ],
+})
+export class TokokeranjangCreatePage2 {
+  id:Number
+  id_toko:Number;
+  item2;
+  items:TokokeranjangArray[]=[];
+  stok:any;
+  constructor(public params: NavParams,public nav: NavController,public platform: Platform,public actionSheetCtrl: ActionSheetController,public alertCtrl: AlertController,
+    public loadincontroller:LoadingController,public _toast:ToastController,public tokokeranjangservice:TokokeranjangserviceProvider) {
+      this.item2 = params.data.item2;
+  }
+
+  //Tampil data awal
+ionViewDidLoad(item2) {
+  this.id_toko = 1;
+    //Pemberitahuan
+    let alert = this.alertCtrl.create({
+      title: 'Informasi',
+      subTitle: 'Barang dimasukkan keranjang',
+      buttons: ['OK']
+    });
+    //Loading Data
+    let loadingdata=this.loadincontroller.create({
+        content:"Menambahkan ke keranjang..."
+    });
+    
+    loadingdata.present();
+    //Mengambil value dari input field untuk dimasukkan ke UsulanArray
+    this.tokokeranjangservice.tambahkeranjang(new TokokeranjangArray(this.id,this.id_toko,this.item2.id,1))
+    .subscribe(
+      (data:TokokeranjangArray)=>{
+        //Push
+        loadingdata.dismiss();
+        this.nav.setRoot(TokokeranjangPage2);
       },
       function(error){
   

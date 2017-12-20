@@ -6,7 +6,7 @@ import { TokopenjualanPage } from '../tokopenjualan/tokopenjualan';
 import { TokoprodukPage } from '../tokoproduk/tokoproduk';
 import { TokoprofilePage } from '../tokoprofile/tokoprofile';
 import { TokokeranjangPage2 } from '../tokokeranjang/tokokeranjang';
-
+import { TokosearchPage } from '../tokosearch/tokosearch';
 /**
  * Generated class for the TokoPage page.
  *
@@ -38,5 +38,7 @@ export class TokoPage {
 tombolkeranjang() {
   this.nav.push(TokokeranjangPage2);
 }
-
+tombolsearch() {
+  this.nav.push (TokosearchPage);
+}
 }

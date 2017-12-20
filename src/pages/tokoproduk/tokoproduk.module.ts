@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { TokoprodukPage } from './tokoproduk';
+import { TokoprodukPage,TokoprodukCreatePage } from './tokoproduk';
 
 @NgModule({
   declarations: [
-    TokoprodukPage,
+    TokoprodukPage,TokoprodukCreatePage
   ],
   imports: [
     IonicPageModule.forChild(TokoprodukPage),
