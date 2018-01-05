@@ -4,7 +4,6 @@ import { SearchArray } from '../../pages/search/searchArray';
 //Tambahkan Provider
 import { SearchserviceProvider } from '../../providers/searchservice/searchservice';
 import { KeranjangPage,KeranjangcreatePage } from '../../pages/keranjang/keranjang';
-import { query } from '@angular/core/src/animation/dsl';
 /**
  * Generated class for the SearchPage page.
  *

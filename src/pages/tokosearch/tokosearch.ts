@@ -4,7 +4,6 @@ import { TokosearchArray } from '../../pages/tokosearch/tokosearcharray';
 //Tambahkan Provider
 import { TokosearchserviceProvider } from '../../providers/tokosearchservice/tokosearchservice';
 import { TokokeranjangPage,TokokeranjangCreatePage2 } from '../../pages/tokokeranjang/tokokeranjang';
-import { query } from '@angular/core/src/animation/dsl';
 /**
  * Generated class for the TokosearchPage page.
  *
