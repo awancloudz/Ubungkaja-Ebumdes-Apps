@@ -1,8 +1,14 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar color="primary">
-      <ion-title style="text-align:center">eCommerce - Bumdes</ion-title>
-    </ion-toolbar>
+    <ion-item color="primary">
+      <ion-avatar round>
+        <img class="avatar-depan" style= "height: 100px;width: 100px" src="assets/img/person3.jpeg" >
+      </ion-avatar>
+        
+      <ion-toolbar color="primary">
+        <ion-title><p *ngFor="let user of warga" style="text-align:center;font-size: 18px" >{{ user.nama }}</p></ion-title>
+      </ion-toolbar>
+    </ion-item>
   </ion-header>
 
   <ion-content>
@@ -14,9 +20,12 @@
     </ion-list>
 
     <ion-footer>
-         <button menuClose ion-item icon-left position="bottom" (click)="tomboltoko()">
+         <button menuClose ion-item icon-left position="bottom" (click)="tomboltoko()" *ngIf="level == 'toko'">
           <i class="fa fa-building iconprimary" aria-hidden="true" style="padding-right:15px;font-size:20px;margin-left:5px"></i>
-          Toko saya</button>
+          Toko Saya</button>
+          <button menuClose ion-item icon-left position="bottom" (click)="daftartoko()" *ngIf="level == 'warga'">
+          <i class="fa fa-building iconprimary" aria-hidden="true" style="padding-right:15px;font-size:20px;margin-left:5px"></i>
+          Buat Toko</button>
     </ion-footer>
   </ion-content>
 

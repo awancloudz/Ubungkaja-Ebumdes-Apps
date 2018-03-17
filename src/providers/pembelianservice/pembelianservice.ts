@@ -20,14 +20,14 @@ export class PembelianserviceProvider {
   constructor(public _http: Http) {
   }
   //Tampilkan
-  tampilkanpembelian()
+  tampilkanpembelian(user)
   {
-   return this._http.get(this.url)
+   return this._http.get(this.url+"/"+user)
    .map((response:Response)=>response.json());
   }
   tampilkandetail(item:PembelianArray)
   {
-   return this._http.get(this.url+"/"+item.id)
+   return this._http.get(this.url+"/detail/"+item.id)
    .map((response:Response)=>response.json());
   }
   //Tambah pembelian baru
@@ -44,7 +44,7 @@ export class PembelianserviceProvider {
     let body = JSON.stringify(item);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this._http.put(this.url+"/"+item.id,
+    return this._http.put(this.url,
                   body, options)
                  .map((response:Response)=>response.json());
   }

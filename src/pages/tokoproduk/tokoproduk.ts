@@ -8,6 +8,7 @@ import { TokokategoriserviceProvider } from '../../providers/tokokategoriservice
 //Camera
 import {Camera, CameraOptions} from '@ionic-native/camera';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the TokoprodukPage page.
  *
@@ -22,7 +23,7 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
 export class TokoprodukPage {
   items:TokoprodukArray[]=[];
   constructor(public nav: NavController,public platform: Platform,public actionSheetCtrl: ActionSheetController,public alertCtrl: AlertController,
-    public loadincontroller:LoadingController,public _toast:ToastController,public tokoprodukservice:TokoprodukserviceProvider) {
+    public loadincontroller:LoadingController,public _toast:ToastController,public tokoprodukservice:TokoprodukserviceProvider,private storage: Storage) {
 
   }
 
@@ -34,7 +35,8 @@ ionViewDidLoad() {
   });
   loadingdata.present();
   //Tampilkan data dari server
-  this.tokoprodukservice.tampilkanproduk().subscribe(
+  this.storage.get('id_toko').then((toko) => {
+  this.tokoprodukservice.tampilkanproduk(toko).subscribe(
     //Jika data sudah berhasil di load
     (data:TokoprodukArray[])=>{
       this.items=data;
@@ -47,6 +49,7 @@ ionViewDidLoad() {
       loadingdata.dismiss();
     }
   );
+});
 }
 tombolhapus(item){
 //Alert Konfirmasi
@@ -110,7 +113,7 @@ export class TokoprodukCreatePage {
   items:TokoprodukArray[]=[];
   constructor(public params: NavParams,public nav: NavController,public platform: Platform,public actionSheetCtrl: ActionSheetController,public alertCtrl: AlertController,
     public loadincontroller:LoadingController,public _toast:ToastController,public tokoprodukservice:TokoprodukserviceProvider,
-    private transfer: FileTransfer,private camera: Camera) {
+    private transfer: FileTransfer,private camera: Camera,private storage: Storage) {
       
   }
 
@@ -129,7 +132,8 @@ export class TokoprodukCreatePage {
     
     loadingdata.present();
     //Mengambil value dari input field untuk dimasukkan ke TokoprodukArray
-    this.tokoprodukservice.tambahproduk(new TokoprodukArray(this.id,this.id_kategoriproduk,this.id_subkategoriproduk,this.id_toko,this.kodeproduk,
+  this.storage.get('id_toko').then((toko) => {
+    this.tokoprodukservice.tambahproduk(new TokoprodukArray(this.id,this.id_kategoriproduk,this.id_subkategoriproduk,toko,this.kodeproduk,
     this.namaproduk,this.stok,this.harga,this.diskon))
     .subscribe(
       (data:TokoprodukArray)=>{
@@ -144,6 +148,7 @@ export class TokoprodukCreatePage {
         alert.present();
       }
     );
+  });
   }
 
   ngOnInit() {

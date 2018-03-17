@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, Platform, ActionSheetController, L
 //Tambahkan Provider
 import { PembelianserviceProvider } from '../../providers/pembelianservice/pembelianservice';
 import { PembelianArray } from '../../pages/pembelian/pembelianarray';
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the PembelianPage page.
  *
@@ -19,15 +20,35 @@ export class PembelianPage {
 
   items:PembelianArray[]=[];
 
-  constructor ( public nav: NavController,
-              public platform: Platform,
-              public actionSheetCtrl: ActionSheetController,
-              public alertCtrl: AlertController,
-              public loadincontroller:LoadingController,
-              public _toast:ToastController,
-              public pembelianservise:PembelianserviceProvider
-              ) {
-            }
+  constructor ( public nav: NavController,public platform: Platform,public actionSheetCtrl: ActionSheetController,
+    public alertCtrl: AlertController,public loadincontroller:LoadingController,public _toast:ToastController,
+    public pembelianservise:PembelianserviceProvider,private storage: Storage) {
+    //TOMBOL EXIT
+    this.platform.ready().then(() => {
+      this.platform.registerBackButtonAction(() => {
+          let confirm = this.alertCtrl.create({
+            title: 'Konfirmasi',
+            message: 'Anda Ingin Keluar dari Aplikasi',
+            buttons: [
+              {
+                text: 'Tidak',
+                role: 'cancel',
+                handler: () => {
+                
+                }
+              },
+              {
+                text: 'Ya',
+                handler: () => {
+                  navigator['app'].exitApp();
+                }
+              }
+            ]
+          });
+          confirm.present();                
+      });
+    });
+  }
 
   ionViewDidLoad() {
     //Loading bar
@@ -36,7 +57,8 @@ export class PembelianPage {
     });
     loadingdata.present();
     //Tampilkan data dari server
-    this.pembelianservise.tampilkanpembelian().subscribe(
+    this.storage.get('id_user').then((user) => {
+    this.pembelianservise.tampilkanpembelian(user).subscribe(
       //Jika data sudah berhasil di load
       (data:PembelianArray[])=>{
         this.items=data;
@@ -49,6 +71,7 @@ export class PembelianPage {
         loadingdata.dismiss();
       }
     );
+    });
   }
 
   pembeliandetail (item) {
@@ -72,7 +95,12 @@ export class PembelianCreatePage {
   items:PembelianArray[]=[];
   constructor(public params: NavParams,public nav: NavController,public platform: Platform,public actionSheetCtrl: ActionSheetController,public alertCtrl: AlertController,
     public loadincontroller:LoadingController,public _toast:ToastController,public pembelianservise:PembelianserviceProvider) {
-      this.item2 = params.data.item2;
+    this.item2 = params.data.item2;
+    //Hapus Back
+    let backAction =  platform.registerBackButtonAction(() => {
+      this.nav.pop();
+      backAction();
+    },2)
   }
 
   //Tampil data awal
@@ -115,6 +143,7 @@ ionViewDidLoad(item2) {
 @Component({
   selector: 'page-pembelian-detail',
   templateUrl: 'pembelian-detail.html',
+  entryComponents:[ PembelianPage ], 
 })
 export class PembelianDetailPage {
   item;
@@ -128,7 +157,12 @@ export class PembelianDetailPage {
   
   constructor(params: NavParams, public nav: NavController,public platform: Platform,public actionSheetCtrl: ActionSheetController,public alertCtrl: AlertController,
     public loadincontroller:LoadingController,public _toast:ToastController,public pembelianservice:PembelianserviceProvider) {
-      this.item = params.data.item;
+    this.item = params.data.item;
+    //Hapus Back
+    let backAction =  platform.registerBackButtonAction(() => {
+      this.nav.pop();
+      backAction();
+    },2)
   }
 
 //Tampil data awal
@@ -152,5 +186,28 @@ ionViewDidLoad() {
       loadingdata.dismiss();
     }
   );
+}
+tombolselesai(item){
+  //Loading bar
+let loadingdata=this.loadincontroller.create({
+  content:"Loading..."
+});
+loadingdata.present();
+//Tampilkan data dari server
+this.pembelianservice.editpembelian(new PembelianArray(this.item.id,this.item.id_warga,this.item.id_toko,this.item.tanggal,this.item.subtotal,this.item.status))
+.subscribe(
+  //Jika data sudah berhasil di load
+  (data:PembelianArray[])=>{
+    this.items=data;
+    this.nav.setRoot(PembelianPage);
+  },
+  //Jika Error
+  function (error){   
+  },
+  //Tutup Loading
+  function(){
+    loadingdata.dismiss();
+  }
+);
 }
 }

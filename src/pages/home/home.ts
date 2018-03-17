@@ -18,7 +18,31 @@ export class HomePage {
   items:KategoriArray[]=[];
   constructor(public nav: NavController,public platform: Platform,public actionSheetCtrl: ActionSheetController,public alertCtrl: AlertController,
     public loadincontroller:LoadingController,public _toast:ToastController,public kategoriservice:KategoriserviceProvider) {
-
+    //TOMBOL EXIT
+    this.platform.ready().then(() => {
+      this.platform.registerBackButtonAction(() => {
+          let confirm = this.alertCtrl.create({
+            title: 'Konfirmasi',
+            message: 'Anda Ingin Keluar dari Aplikasi',
+            buttons: [
+              {
+                text: 'Tidak',
+                role: 'cancel',
+                handler: () => {
+                
+                }
+              },
+              {
+                text: 'Ya',
+                handler: () => {
+                  navigator['app'].exitApp();
+                }
+              }
+            ]
+          });
+          confirm.present();                
+      });
+    });
   }
   //Tampil data awal
 ionViewDidLoad() {

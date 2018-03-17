@@ -39,6 +39,6 @@
 <ion-footer style="text-align:center">
   <h6 *ngFor="let item2 of items.koleksi2">Total Pembayaran : <b>Rp {{ item2.subtotal }},-</b></h6>
   <ion-buttons>
-      <button ion-button block style="text-transform: none">Kirim</button>
+      <button *ngIf="item.status == 'order'" ion-button block style="text-transform: none" (click)="tombolkirim(item)">Kirim</button>
   </ion-buttons>
 </ion-footer>

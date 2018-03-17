@@ -21,9 +21,9 @@ export class KeranjangserviceProvider {
   }
 
   //Tampilkan
-  tampilkankeranjang()
+  tampilkankeranjang(user)
   {
-   return this._http.get(this.url)
+   return this._http.get(this.url+"/"+user)
    .map((response:Response)=>response.json());
   }
   //Tambah keranjang baru

@@ -7,6 +7,7 @@ import { NavController, NavParams, Platform, ActionSheetController, LoadingContr
 import { SearchPage } from '../../pages/search/search';
 import { PembelianPage,PembelianCreatePage } from '../pembelian/pembelian';
 import { HomePage } from '../../pages/home/home';
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the KeranjangPage page.
  *
@@ -24,7 +25,7 @@ export class KeranjangPage {
   jumlah:any;
   stok:any;
   constructor(public nav: NavController,public platform: Platform,public actionSheetCtrl: ActionSheetController,public alertCtrl: AlertController,
-    public loadincontroller:LoadingController,public _toast:ToastController,public keranjangservice:KeranjangserviceProvider) {
+    public loadincontroller:LoadingController,public _toast:ToastController,public keranjangservice:KeranjangserviceProvider,private storage: Storage) {
 
   }
 
@@ -35,8 +36,9 @@ ionViewDidLoad() {
     content:"Loading..."
   });
   loadingdata.present();
+  this.storage.get('id_user').then((user) => {
   //Tampilkan data dari server
-  this.keranjangservice.tampilkankeranjang().subscribe(
+  this.keranjangservice.tampilkankeranjang(user).subscribe(
     //Jika data sudah berhasil di load
     (data:KeranjangArray[])=>{
       this.items=data;
@@ -49,6 +51,7 @@ ionViewDidLoad() {
       loadingdata.dismiss();
     }
   );
+  });
 }
 tombolhapus(item){
 //Alert Konfirmasi
@@ -156,13 +159,13 @@ export class KeranjangcreatePage {
   items:KeranjangArray[]=[];
   stok:any;
   constructor(public params: NavParams,public nav: NavController,public platform: Platform,public actionSheetCtrl: ActionSheetController,public alertCtrl: AlertController,
-    public loadincontroller:LoadingController,public _toast:ToastController,public keranjangservice:KeranjangserviceProvider) {
+    public loadincontroller:LoadingController,public _toast:ToastController,public keranjangservice:KeranjangserviceProvider,private storage: Storage) {
       this.item2 = params.data.item2;
   }
 
   //Tampil data awal
 ionViewDidLoad(item2) {
-  this.id_warga = 1;
+  
     //Pemberitahuan
     let alert = this.alertCtrl.create({
       title: 'Informasi',
@@ -175,8 +178,9 @@ ionViewDidLoad(item2) {
     });
     
     loadingdata.present();
+  this.storage.get('id_user').then((user) => {
     //Mengambil value dari input field untuk dimasukkan ke UsulanArray
-    this.keranjangservice.tambahkeranjang(new KeranjangArray(this.id,this.id_warga,this.item2.id,1))
+    this.keranjangservice.tambahkeranjang(new KeranjangArray(this.id,user,this.item2.id,1))
     .subscribe(
       (data:KeranjangArray)=>{
         //Push
@@ -190,5 +194,6 @@ ionViewDidLoad(item2) {
         //alert.present();
       }
     );
+  });
   }
 }

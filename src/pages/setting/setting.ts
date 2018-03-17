@@ -1,25 +1,36 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams,Events } from 'ionic-angular';
+//Set direktori redirect * Wajib *
+import { LoginPage } from '../../pages/login/login';
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the SettingPage page.
  *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
  */
 
 @IonicPage()
 @Component({
-  selector: 'page-setting',
   templateUrl: 'setting.html',
+  //Set komponen * Wajib *
+  entryComponents:[ LoginPage ],
 })
 export class SettingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private storage: Storage,private events: Events) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SettingPage');
+    this.storage.set('id_user', null);
+    this.storage.set('nama_warga', null);
+    this.storage.set('no_ktp', null);
+    this.storage.set('level', null);
+    this.storage.set('id_dusun', null);
+    this.storage.set('id_desa',null);
+    this.storage.set('id_toko',null);
+    this.events.publish('user:warga');
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }

@@ -51,5 +51,8 @@
 
 <ion-footer style="text-align:center">
   <h6 *ngFor="let item2 of items.koleksi2">Total Pembayaran : <b>Rp {{ item2.subtotal }},-</b></h6>
+  <ion-buttons>
+    <button *ngIf="item.status == 'kirim'" ion-button block style="text-transform: none" (click)="tombolselesai(item)">Sudah Diterima</button>
+</ion-buttons>
 </ion-footer>
     

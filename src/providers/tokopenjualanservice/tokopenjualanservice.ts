@@ -20,14 +20,14 @@ export class TokopenjualanserviceProvider {
   constructor(public _http: Http) {
   }
   //Tampilkan penjualan
-  tampilkanpenjualan()
+  tampilkanpenjualan(toko)
   {
-   return this._http.get(this.url)
+   return this._http.get(this.url+"/"+toko)
    .map((response:Response)=>response.json());
   }
   tampilkandetail(item:TokopenjualanArray)
   {
-   return this._http.get(this.url+"/"+item.id)
+   return this._http.get(this.url+"/detail/"+item.id)
    .map((response:Response)=>response.json());
   }
   //Tambah penjualan baru
@@ -44,7 +44,7 @@ export class TokopenjualanserviceProvider {
     let body = JSON.stringify(item);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this._http.put(this.url+"/"+item.id,
+    return this._http.put(this.url,
                   body, options)
                  .map((response:Response)=>response.json());
   }

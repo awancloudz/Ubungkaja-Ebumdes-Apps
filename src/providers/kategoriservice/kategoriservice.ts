@@ -32,5 +32,9 @@ export class KategoriserviceProvider {
    return this._http.get(this.url+"/"+item.id)
    .map((response:Response)=>response.json());
   }
-  
+  tampilkandetail2(item:KategoriArray)
+  {
+   return this._http.get(this.url+"/idkat/"+item.id_kategoriproduk+"/idsub/"+item.id)
+   .map((response:Response)=>response.json());
+  }
 }

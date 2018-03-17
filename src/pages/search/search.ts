@@ -1,6 +1,6 @@
 import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams,Searchbar,AlertController } from 'ionic-angular';
-import { SearchArray } from '../../pages/search/searchArray';
+import { SearchArray } from '../../pages/search/searcharray';
 //Tambahkan Provider
 import { SearchserviceProvider } from '../../providers/searchservice/searchservice';
 import { KeranjangPage,KeranjangcreatePage } from '../../pages/keranjang/keranjang';

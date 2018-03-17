@@ -21,9 +21,9 @@ export class TokoprodukserviceProvider {
   }
 
   //Tampilkan
-  tampilkanproduk()
+  tampilkanproduk(toko)
   {
-   return this._http.get(this.url)
+   return this._http.get(this.url+"/"+toko)
    .map((response:Response)=>response.json());
   }
   //Tambah produk baru

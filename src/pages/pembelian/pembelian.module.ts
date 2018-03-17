@@ -4,7 +4,7 @@ import { PembelianPage,PembelianDetailPage,PembelianCreatePage } from './pembeli
 
 @NgModule({
   declarations: [
-    PembelianPage,
+    PembelianPage,PembelianDetailPage,PembelianCreatePage
   ],
   imports: [
     IonicPageModule.forChild(PembelianPage),

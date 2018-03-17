@@ -5,21 +5,34 @@
   Ionic pages and navigation.
 -->
 
-<ion-content>
+<ion-content padding>
   <ion-list >
-
-    <ion-item style="text-align: center">
-      <img src="assets/imgs/ecommerce.png" style="height:120px;width:120px">
-      <h1><b>Nama Toko</b></h1>
-      <h2><b>Nama Owner</b></h2>
-      <br>
-
-      <ion-row>
-        <ion-col style="white-space: normal">
-          <p>Alamat Toko</p>
-         </ion-col>
-      </ion-row>
+    <ion-input type="hidden" [(ngModel)]="id"></ion-input>
+    <ion-input type="hidden" [(ngModel)]="id_warga"></ion-input>
+    <ion-input type="hidden" [(ngModel)]="kodetoko"></ion-input>
+    <ion-input type="hidden" [(ngModel)]="foto"></ion-input>
+    <ion-item style="text-align: center" color="secondary" (click)="takePhoto()">
+      <ion-avatar round *ngFor="let photo of photos; let id = index">
+        <img class="avatar-depan" style="height: 100px;width: 100px;" src="{{photo}}">
+      </ion-avatar>
+      <p align="center"><a menuClose style="text-decoration: none;"><font color="white">Ubah</font></a></p>
     </ion-item>
-
+    <ion-item>
+      <ion-label floating>Nama Toko</ion-label>
+      <ion-input type="text" [(ngModel)]="namatoko"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating>Alamat</ion-label>
+      <ion-textarea rows="5" cols="5" [(ngModel)]="alamat" ></ion-textarea>
+    </ion-item>
+    <ion-input type="hidden" [(ngModel)]="status"></ion-input>
   </ion-list>
+  <ion-fab bottom right>
+    <ion-buttons>
+      <button ion-fab (click)="editprofile()" style="margin-bottom:10px">
+        <ion-icon name="checkmark" style="zoom:1.4"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-fab>
 </ion-content>
