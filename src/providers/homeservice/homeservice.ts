@@ -21,8 +21,8 @@ export class HomeserviceProvider {
   private items:HomeArray[]=[];
   private items2:HomeArray2[]=[];
   //Memanggil URL Api
-  private url:string="http://forkomperbekelbali.com/desa/public/api/perangkat";
-  private url2:string="http://forkomperbekelbali.com/desa/public/api/perangkattoko";
+  private url:string="http://localhost:8000/api/perangkat";
+  private url2:string="http://localhost:8000/api/perangkattoko";
   constructor(public _http: Http) {
   }
   //Cek + Tambah perangkat
